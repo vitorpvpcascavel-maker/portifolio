@@ -1,3 +1,4 @@
+import { useI18n } from "../i18n/useI18n";
 import { Reveal } from "./Reveal";
 
 /** Qualquer jpg/png/webp na pasta `foto/` na raiz do projeto; prioriza `eu.*`. */
@@ -16,18 +17,9 @@ function pickProfilePhoto(): string | null {
 
 const profilePhoto = pickProfilePhoto();
 
-const bullets = [
-  {
-    title: "Automação Web/Mobile",
-    desc: "Cypress, Appium e stacks modernas com foco em manutenção e relatórios acionáveis.",
-  },
-  {
-    title: "Cultura DevOps",
-    desc: "Integração com Jenkins, Docker e qualidade embutida no fluxo de entrega contínua.",
-  },
-];
-
 export function About() {
+  const { copy } = useI18n();
+
   return (
     <section id="sobre" className="border-t border-white/5 py-20 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:grid-cols-2 sm:gap-16 sm:px-6">
@@ -44,7 +36,7 @@ export function About() {
               {profilePhoto ? (
                 <img
                   src={profilePhoto}
-                  alt="Retrato profissional"
+                  alt={copy.about.photoAlt}
                   className="h-full w-full object-cover"
                   width={600}
                   height={600}
@@ -54,19 +46,23 @@ export function About() {
               ) : (
                 <div className="flex h-full min-h-[280px] flex-col items-center justify-center gap-2 bg-night-elevated p-6 text-center text-sm text-zinc-500">
                   <p>
-                    Nenhuma imagem em{" "}
-                    <code className="text-accent-cyan">foto/</code> na raiz deste
-                    projeto.
+                    {copy.about.noPhoto1a}{" "}
+                    <code className="text-accent-cyan">foto/</code>{" "}
+                    {copy.about.noPhoto1b}
                   </p>
                   <p>
-                    Use <code className="text-accent-cyan">eu.jpg</code> ou{" "}
-                    <code className="text-accent-cyan">eu.png</code> (ou outro
-                    .jpg/.png/.webp).
+                    {copy.about.noPhoto2a}{" "}
+                    <code className="text-accent-cyan">eu.jpg</code>{" "}
+                    {copy.about.noPhoto2b}{" "}
+                    <code className="text-accent-cyan">eu.png</code>{" "}
+                    {copy.about.noPhoto2c}
                   </p>
                   <p className="text-xs text-zinc-600">
-                    Confira se o terminal está na pasta certa (ex.:{" "}
-                    <code>portifolio</code>, não outra cópia como{" "}
-                    <code>portfolio</code>).
+                    {copy.about.noPhoto3a}{" "}
+                    <code className="text-accent-cyan">portifolio</code>{" "}
+                    {copy.about.noPhoto3b}{" "}
+                    <code className="text-accent-cyan">portfolio</code>
+                    {copy.about.noPhoto3c}
                   </p>
                 </div>
               )}
@@ -77,16 +73,11 @@ export function About() {
         <Reveal delay={0.1}>
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Sobre Mim
+              {copy.about.heading}
             </h2>
-            <p className="mt-6 leading-relaxed text-zinc-400">
-              Engenheiro de QA com paixão por automação de ponta a ponta. Ajudo
-              squads a construir pirâmides de teste equilibradas, observabilidade
-              de qualidade e cultura de ownership — sempre alinhado a métricas de
-              negócio e experiência do usuário.
-            </p>
+            <p className="mt-6 leading-relaxed text-zinc-400">{copy.about.body}</p>
             <ul className="mt-8 space-y-5">
-              {bullets.map((b) => (
+              {copy.about.bullets.map((b) => (
                 <li
                   key={b.title}
                   className="flex gap-4 rounded-xl border border-white/5 bg-night-card/50 p-4"

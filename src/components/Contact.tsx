@@ -1,7 +1,10 @@
+import { useI18n } from "../i18n/useI18n";
 import { Reveal } from "./Reveal";
 import { ContactForm } from "./ContactForm";
 
 export function Contact() {
+  const { copy } = useI18n();
+
   return (
     <section id="contato" className="border-t border-white/5 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -10,12 +13,9 @@ export function Contact() {
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
                 <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                  Vamos elevar a qualidade do seu produto?
+                  {copy.contact.heading}
                 </h2>
-                <p className="mt-4 leading-relaxed text-zinc-400">
-                  Estou aberto a conversar sobre automação, estratégia de QA ou
-                  oportunidades onde qualidade seja prioridade de negócio.
-                </p>
+                <p className="mt-4 leading-relaxed text-zinc-400">{copy.contact.body}</p>
                 <ul className="mt-8 space-y-4 text-sm">
                   <li className="flex items-center gap-3 text-zinc-300">
                     <span className="text-accent-cyan" aria-hidden>
@@ -56,7 +56,7 @@ export function Contact() {
                         />
                       </svg>
                     </span>
-                    Brasil — remoto / híbrido
+                    {copy.contact.location}
                   </li>
                 </ul>
                 <div className="mt-8 flex gap-3">

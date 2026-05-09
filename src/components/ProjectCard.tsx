@@ -8,6 +8,8 @@ export type Project = {
   demoUrl: string;
   repoUrl: string;
   delay?: number;
+  demoLabel: string;
+  repoLabel: string;
 };
 
 export function ProjectCard({
@@ -18,6 +20,8 @@ export function ProjectCard({
   demoUrl,
   repoUrl,
   delay = 0,
+  demoLabel,
+  repoLabel,
 }: Project) {
   return (
     <Reveal delay={delay}>
@@ -52,7 +56,7 @@ export function ProjectCard({
               rel="noreferrer"
               className="rounded-lg bg-accent-purple px-4 py-2 text-xs font-semibold text-night transition hover:bg-violet-200"
             >
-              Demo
+              {demoLabel}
             </a>
             <a
               href={repoUrl}
@@ -60,7 +64,7 @@ export function ProjectCard({
               rel="noreferrer"
               className="rounded-lg border border-white/15 px-4 py-2 text-xs font-semibold text-white transition hover:border-accent-purple/50 hover:bg-white/5"
             >
-              GitHub
+              {repoLabel}
             </a>
           </div>
         </div>

@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 
+import { useI18n } from "../i18n/useI18n";
+import { cvForLocale } from "../site";
+
 export function Hero() {
+  const { copy, locale } = useI18n();
+  const cv = cvForLocale(locale);
+
   return (
     <section
       id="inicio"
@@ -18,7 +24,7 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
-          Disponível para um novo desafio
+          {copy.hero.badge}
         </motion.div>
 
         <motion.h1
@@ -27,11 +33,11 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 0.08 }}
           className="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
         >
-          Arquitetando{" "}
+          {copy.hero.titleBefore}{" "}
           <span className="bg-gradient-accent bg-clip-text text-transparent">
-            Sistemas de Automação
+            {copy.hero.titleHighlight}
           </span>{" "}
-          para Software Resiliente.
+          {copy.hero.titleAfter}
         </motion.h1>
 
         <motion.p
@@ -40,9 +46,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg"
         >
-          Foco em pipelines CI/CD, automação moderna e soluções robustas que
-          reduzem risco, aceleram entregas e elevam a confiabilidade do produto
-          do início ao deploy.
+          {copy.hero.subtitle}
         </motion.p>
 
         <motion.div
@@ -55,13 +59,14 @@ export function Hero() {
             href="#projetos"
             className="rounded-lg bg-accent-purple px-6 py-3 text-sm font-semibold text-night shadow-glow transition hover:bg-violet-200"
           >
-            Meus Projetos
+            {copy.hero.projects}
           </a>
           <a
-            href="/cv.pdf"
+            href={cv.url}
+            download={cv.filename}
             className="rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-accent-purple/60 hover:bg-white/5"
           >
-            Conhecer Currículo
+            {copy.hero.viewCv}
           </a>
         </motion.div>
       </div>

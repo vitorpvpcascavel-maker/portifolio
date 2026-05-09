@@ -1,16 +1,25 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
-const links = [
-  { href: "#inicio", label: "Início" },
-  { href: "#experiencias", label: "Experiências" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#especializacao", label: "Especialização" },
-  { href: "#contato", label: "Contato" },
-];
+import { cvForLocale } from "../site";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useI18n } from "../i18n/useI18n";
 
 export function Navbar() {
+  const { copy, locale } = useI18n();
+  const cv = cvForLocale(locale);
   const [open, setOpen] = useState(false);
+
+  const links = useMemo(
+    () => [
+      { href: "#inicio", label: copy.nav.inicio },
+      { href: "#experiencias", label: copy.nav.experiencias },
+      { href: "#projetos", label: copy.nav.projetos },
+      { href: "#especializacao", label: copy.nav.especializacao },
+      { href: "#contato", label: copy.nav.contato },
+    ],
+    [copy.nav]
+  );
 
   return (
     <motion.header
@@ -24,7 +33,7 @@ export function Navbar() {
           href="#inicio"
           className="shrink-0 text-sm font-bold tracking-tight text-white sm:text-base"
         >
-          QA Automation Elite
+          {copy.nav.brand}
         </a>
 
         <ul className="hidden items-center gap-6 text-sm font-medium text-zinc-400 md:flex">
@@ -42,16 +51,18 @@ export function Navbar() {
 
         <div className="flex shrink-0 items-center gap-2">
           <a
-            href="/cv.pdf"
+            href={cv.url}
+            download={cv.filename}
             className="hidden rounded-lg bg-accent-purple px-3 py-2 text-xs font-semibold text-night transition hover:bg-violet-200 sm:inline-flex sm:px-4 sm:text-sm"
           >
-            Baixar Currículo
+            {copy.nav.downloadCv}
           </a>
+          <LanguageSwitcher />
           <button
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white md:hidden"
             aria-expanded={open}
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-label={open ? copy.nav.closeMenu : copy.nav.openMenu}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? "✕" : "☰"}
@@ -82,12 +93,16 @@ export function Navbar() {
               ))}
               <li className="pt-2">
                 <a
-                  href="/cv.pdf"
+                  href={cv.url}
+                  download={cv.filename}
                   className="block rounded-lg bg-accent-purple px-3 py-2.5 text-center font-semibold text-night"
                   onClick={() => setOpen(false)}
                 >
-                  Baixar Currículo
+                  {copy.nav.downloadCv}
                 </a>
+              </li>
+              <li className="flex justify-center pb-2 pt-4">
+                <LanguageSwitcher />
               </li>
             </ul>
           </motion.div>
