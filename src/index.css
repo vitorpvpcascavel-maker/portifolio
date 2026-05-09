@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-night font-sans text-zinc-300 antialiased;
+  background-color: #0a0612;
+}
+
+::selection {
+  @apply bg-accent-purpledeep/40 text-white;
+}
