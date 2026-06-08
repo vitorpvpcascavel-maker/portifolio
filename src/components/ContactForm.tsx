@@ -2,6 +2,9 @@ import { type FormEvent, useState } from "react";
 
 import { useI18n } from "../i18n/useI18n";
 
+const inputClass =
+  "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-accent-purple/40 focus:ring-2 focus:ring-accent-purple/30 dark:border-white/10 dark:bg-[#0a0612]/80 dark:text-white dark:placeholder:text-zinc-600";
+
 export function ContactForm() {
   const { copy } = useI18n();
   const [sent, setSent] = useState(false);
@@ -12,11 +15,7 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className="flex flex-col gap-4"
-      noValidate
-    >
+    <form onSubmit={onSubmit} className="flex flex-col gap-4" noValidate>
       <div>
         <label htmlFor="nome" className="sr-only">
           {copy.contact.formName}
@@ -27,7 +26,7 @@ export function ContactForm() {
           type="text"
           required
           placeholder={copy.contact.formName}
-          className="w-full rounded-lg border border-white/10 bg-night/80 px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none ring-accent-purple/0 transition focus:border-accent-purple/40 focus:ring-2 focus:ring-accent-purple/30"
+          className={inputClass}
         />
       </div>
       <div>
@@ -40,7 +39,7 @@ export function ContactForm() {
           type="email"
           required
           placeholder={copy.contact.formEmail}
-          className="w-full rounded-lg border border-white/10 bg-night/80 px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none transition focus:border-accent-purple/40 focus:ring-2 focus:ring-accent-purple/30"
+          className={inputClass}
         />
       </div>
       <div>
@@ -53,17 +52,17 @@ export function ContactForm() {
           required
           rows={5}
           placeholder={copy.contact.formMessage}
-          className="w-full resize-none rounded-lg border border-white/10 bg-night/80 px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none transition focus:border-accent-purple/40 focus:ring-2 focus:ring-accent-purple/30"
+          className={`${inputClass} resize-none`}
         />
       </div>
       <button
         type="submit"
-        className="w-full rounded-lg bg-accent-purple py-3 text-sm font-semibold text-night transition hover:bg-violet-200"
+        className="w-full rounded-lg bg-accent-purple py-3 text-sm font-semibold text-[#0f0a18] transition hover:bg-violet-200"
       >
         {copy.contact.formSubmit}
       </button>
       {sent && (
-        <p className="text-center text-sm text-emerald-400" role="status">
+        <p className="text-center text-sm text-emerald-500 dark:text-emerald-400" role="status">
           {copy.contact.formThanks}
         </p>
       )}

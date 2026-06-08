@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -15,6 +15,21 @@
       rel="stylesheet"
     />
     <title>QA Engineer — Portfólio</title>
+    <script>
+      (function () {
+        var isDark = localStorage.getItem("portfolio-theme") === "dark";
+        var root = document.documentElement;
+        if (isDark) {
+          root.classList.add("dark");
+          root.dataset.theme = "dark";
+          root.style.colorScheme = "dark";
+        } else {
+          root.classList.remove("dark");
+          root.dataset.theme = "light";
+          root.style.colorScheme = "light";
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

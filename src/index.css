@@ -7,10 +7,23 @@ html {
 }
 
 body {
-  @apply bg-night font-sans text-zinc-300 antialiased;
+  background-color: #f8fafc;
+  color: #475569;
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark body {
   background-color: #0a0612;
+  color: #a1a1aa;
 }
 
 ::selection {
-  @apply bg-accent-purpledeep/40 text-white;
+  background-color: rgb(139 92 246 / 0.4);
+  color: #0f172a;
+}
+
+html.dark ::selection {
+  color: #fff;
 }

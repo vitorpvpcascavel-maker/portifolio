@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-night">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0612]">
       <Navbar />
       <main>
         <Hero />

@@ -5,12 +5,12 @@ export function Timeline() {
   const { copy } = useI18n();
 
   return (
-    <section id="experiencias" className="border-t border-white/5 py-20 sm:py-24">
+    <section id="experiencias" className="border-t border-slate-200 py-20 dark:border-white/5 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
           {copy.timeline.heading}
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-zinc-400">
+        <p className="mx-auto mt-3 max-w-2xl text-center text-slate-600 dark:text-zinc-400">
           {copy.timeline.subtitle}
         </p>
 
@@ -27,13 +27,13 @@ export function Timeline() {
                   <div
                     className={`relative flex w-full ${isLeft ? "lg:justify-end lg:pr-[52%]" : "lg:justify-start lg:pl-[52%]"}`}
                   >
-                    <article className="w-full max-w-lg rounded-2xl border border-white/5 bg-night-card p-5 shadow-sm sm:p-6">
+                    <article className="w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/5 dark:bg-[#120e1c] sm:p-6">
                       <p className="text-xs font-semibold uppercase tracking-wider text-accent-cyan">
                         {e.period}
                       </p>
-                      <h3 className="mt-2 text-lg font-bold text-white">{e.role}</h3>
+                      <h3 className="mt-2 text-lg font-bold text-slate-900 dark:text-white">{e.role}</h3>
                       <p className="text-sm font-medium text-accent-purple">{e.company}</p>
-                      <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-zinc-400">
+                      <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-slate-600 dark:text-zinc-400">
                         {e.points.map((pt) => (
                           <li key={pt}>{pt}</li>
                         ))}

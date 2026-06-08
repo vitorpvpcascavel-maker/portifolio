@@ -1,13 +1,13 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useMemo, useState } from "react";
 
-import { cvForLocale } from "../site";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { CvDownloadButton } from "./CvDownloadButton";
+import { ThemeToggle } from "./ThemeToggle";
 import { useI18n } from "../i18n/useI18n";
 
 export function Navbar() {
-  const { copy, locale } = useI18n();
-  const cv = cvForLocale(locale);
+  const { copy } = useI18n();
   const [open, setOpen] = useState(false);
 
   const links = useMemo(
@@ -26,17 +26,17 @@ export function Navbar() {
       initial={{ y: -16, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-night/80 backdrop-blur-xl"
+      className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl dark:border-white/5 dark:bg-[#0a0612]/80"
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <a
           href="#inicio"
-          className="shrink-0 text-sm font-bold tracking-tight text-white sm:text-base"
+          className="shrink-0 text-sm font-bold tracking-tight text-slate-900 dark:text-white sm:text-base"
         >
           {copy.nav.brand}
         </a>
 
-        <ul className="hidden items-center gap-6 text-sm font-medium text-zinc-400 md:flex">
+        <ul className="hidden items-center gap-6 text-sm font-medium text-slate-600 dark:text-zinc-400 md:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
@@ -50,17 +50,16 @@ export function Navbar() {
         </ul>
 
         <div className="flex shrink-0 items-center gap-2">
-          <a
-            href={cv.url}
-            download={cv.filename}
-            className="hidden rounded-lg bg-accent-purple px-3 py-2 text-xs font-semibold text-night transition hover:bg-violet-200 sm:inline-flex sm:px-4 sm:text-sm"
-          >
-            {copy.nav.downloadCv}
-          </a>
+          <CvDownloadButton
+            label={copy.nav.downloadCv}
+            variant="primary"
+            className="hidden px-3 py-2 text-xs sm:inline-flex sm:px-4 sm:text-sm"
+          />
           <LanguageSwitcher />
+          <ThemeToggle />
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-900 dark:border-white/10 dark:text-white md:hidden"
             aria-expanded={open}
             aria-label={open ? copy.nav.closeMenu : copy.nav.openMenu}
             onClick={() => setOpen((v) => !v)}
@@ -77,14 +76,14 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-b border-white/5 bg-night/95 md:hidden"
+            className="overflow-hidden border-b border-slate-200 bg-white/95 dark:border-white/5 dark:bg-[#0a0612]/95 md:hidden"
           >
-            <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-zinc-300">
+            <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-slate-700 dark:text-zinc-300">
               {links.map((l) => (
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-accent-purple"
+                    className="block rounded-lg px-3 py-2 hover:bg-slate-100 hover:text-accent-purple dark:hover:bg-white/5"
                     onClick={() => setOpen(false)}
                   >
                     {l.label}
@@ -92,17 +91,16 @@ export function Navbar() {
                 </li>
               ))}
               <li className="pt-2">
-                <a
-                  href={cv.url}
-                  download={cv.filename}
-                  className="block rounded-lg bg-accent-purple px-3 py-2.5 text-center font-semibold text-night"
-                  onClick={() => setOpen(false)}
-                >
-                  {copy.nav.downloadCv}
-                </a>
+                <CvDownloadButton
+                  label={copy.nav.downloadCv}
+                  variant="primary"
+                  className="w-full px-3 py-2.5 text-center text-sm"
+                  onAfterClick={() => setOpen(false)}
+                />
               </li>
-              <li className="flex justify-center pb-2 pt-4">
+              <li className="flex justify-center gap-2 pb-2 pt-4">
                 <LanguageSwitcher />
+                <ThemeToggle />
               </li>
             </ul>
           </motion.div>

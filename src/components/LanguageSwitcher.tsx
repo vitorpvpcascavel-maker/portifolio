@@ -61,7 +61,6 @@ const OPTIONS: { locale: Locale; Flag: typeof FlagBr; labelKey: "langPt" | "lang
   ];
 
 type LanguageSwitcherProps = {
-  /** e.g. extra class for navbar vs mobile drawer */
   className?: string;
 };
 
@@ -72,7 +71,7 @@ export function LanguageSwitcher({ className = "" }: LanguageSwitcherProps) {
     <div
       role="group"
       aria-label="Idioma / Language"
-      className={`inline-flex items-center gap-0.5 rounded-lg border border-white/10 bg-night-card/60 p-0.5 ${className}`}
+      className={`inline-flex items-center gap-0.5 rounded-lg border border-slate-300 bg-white p-0.5 dark:border-white/10 dark:bg-[#120e1c]/60 ${className}`}
     >
       {OPTIONS.map(({ locale: loc, Flag, labelKey }) => {
         const active = locale === loc;
@@ -86,8 +85,8 @@ export function LanguageSwitcher({ className = "" }: LanguageSwitcherProps) {
             onClick={() => setLocale(loc)}
             className={`flex h-8 w-9 items-center justify-center rounded-md transition ${
               active
-                ? "bg-white/15 ring-1 ring-accent-purple/50"
-                : "opacity-75 hover:bg-white/10 hover:opacity-100"
+                ? "bg-slate-200 ring-1 ring-violet-400/50 dark:bg-white/15 dark:ring-accent-purple/50"
+                : "opacity-75 hover:bg-slate-100 hover:opacity-100 dark:hover:bg-white/10"
             }`}
           >
             <Flag className="h-[14px] w-5 shrink-0" />

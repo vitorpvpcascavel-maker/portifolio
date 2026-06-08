@@ -12,6 +12,13 @@ const pt = {
     langPt: "Português",
     langEn: "English",
     langEs: "Español",
+    themeLight: "Ativar tema claro",
+    themeDark: "Ativar tema escuro",
+  },
+  cvDownload: {
+    downloading: "Preparando download...",
+    done: "Download iniciado!",
+    error: "Erro ao baixar — tente de novo",
   },
   hero: {
     badge: "Disponível para um novo desafio",
@@ -25,8 +32,17 @@ const pt = {
   },
   about: {
     heading: "Sobre Mim",
-    body:
-      "Analista de testes pleno com trajetória em produtos financeiros (consórcio Bradesco), plataformas corporativas (marketplace e documentação) e BPM. Unindo automação com Cypress, testes de API e performance ao dia a dia de times ágeis, com forte foco em documentação, regressão estável e suporte à homologação.",
+    paragraphs: [
+      "5 anos quebrando software antes que o usuário quebre.",
+      "Passei por empresas como a Lecom, upLexis e Codgo.X — automatizando testes E2E pro consórcio do Bradesco. No meio do caminho fiz uns cursos de Cypress, automação de API e testes mobile — não por obrigação, mas porque queria entender cada camada do processo.",
+      "Fora do trabalho comecei a me aventurar a codar algumas coisas, como apps, sites e automações. Ainda me aventurando, mas já entregando coisa funcionando.",
+    ],
+    footer:
+      "Ciência da Computação pela FIB Bauru. Interior de SP, disponível pra remoto.",
+    personalHeading: "Fora do trampo",
+    personalParagraph:
+      "Toco violoncelo — que, tecnicamente, é um violino gigante — e curto jogos, filmes, séries e esse tipo de coisa. Um equilíbrio saudável entre partitura e tela.",
+    hobbies: ["Violoncelo", "Jogos", "Filmes", "Séries"],
     photoAlt: "Retrato profissional",
     noPhoto1a: "Nenhuma imagem em",
     noPhoto1b: "na raiz deste projeto.",
@@ -36,16 +52,6 @@ const pt = {
     noPhoto3a: "Confira se o terminal está na pasta certa (ex.:",
     noPhoto3b: ", não outra cópia como",
     noPhoto3c: ").",
-    bullets: [
-      {
-        title: "E2E, API e performance",
-        desc: "Cypress e Postman para fluxos ponta a ponta e contratos; JMeter para validar estabilidade sob carga; integração com GitLab e CI/CD.",
-      },
-      {
-        title: "Agilidade e rastreabilidade",
-        desc: "Rituais SCRUM, casos de teste em Jira/Trello, homologação e sustentação com feedback objetivo ao desenvolvimento.",
-      },
-    ],
   },
   tech: {
     title: "Tech Stack",
@@ -54,29 +60,39 @@ const pt = {
   projects: {
     heading: "Projetos em Destaque",
     subtitle:
-      "Seleção de trabalhos que mostram automação, confiabilidade e impacto em produção.",
+      "Apps que desenvolvi e produtos em que garanti qualidade em produção.",
     demo: "Demo",
     repo: "GitHub",
     items: [
       {
-        title: "QA Dashboard Inteligente",
+        title: "Skimo Graia",
         description:
-          "Painel com métricas de qualidade, tendências de defeitos e integração com pipelines para decisões em tempo real.",
+          "App mobile e web para a lanchonete Skimo Graia — cardápio, carrinho, checkout com pagamento na entrega, rastreio de pedidos e painel admin. React Native/Expo com Firebase Auth, Firestore e API Node opcional.",
       },
       {
-        title: "API Contract Testing Suite",
+        title: "CET Comunicação",
         description:
-          "Suíte automatizada de contratos OpenAPI com relatórios e gates de merge no CI para APIs críticas.",
+          "App de controle de fluxo para a CET Comunicação — registro de entrada e saída de equipamentos e pessoas via leitura de crachá/código de barras, histórico de retiradas e devoluções, painel de patrimônio e exportação de relatórios em Excel.",
       },
       {
-        title: "Mobile E2E na nuvem",
+        title: "Controle Financeiro",
         description:
-          "Execução distribuída de testes Appium com paralelização e artefatos de vídeo para squads mobile.",
+          "App web publicado na Vercel e versão desktop — dashboard, receitas e despesas, categorias, metas e investimentos com login Firebase (e-mail ou Google). React, TypeScript e Vite.",
       },
       {
-        title: "Quality Gates CI/CD",
+        title: "Consórcio Bradesco",
         description:
-          "Template reutilizável de quality gates: cobertura, smoke, performance baseline e aprovação por estágio.",
+          "Automação E2E com Cypress no sistema de consórcio do Bradesco na Codgo.X, cobrindo fluxos críticos, regressão estável e integração com CI/CD do time de QA.",
+      },
+      {
+        title: "upLexis Platform",
+        description:
+          "Cobertura de testes para Marketplace, upFolder e Novo Dossiê — automação E2E e API com Cypress e Postman, performance com JMeter e sustentação de correções em produção.",
+      },
+      {
+        title: "Lecom BPM",
+        description:
+          "Testes manuais Web e Mobile no Lecom BPM, validação via scripts SQL (SQL Server, Oracle, MySQL) e gerenciamento de ambientes Jenkins para ciclos de teste estáveis.",
       },
     ],
   },
@@ -88,7 +104,7 @@ const pt = {
       {
         role: "Analista de Testes Pleno",
         company: "Codgo.X",
-        period: "2024 — Atualmente",
+        period: "2024 — Jun 2025",
         points: [
           "Automação E2E com Cypress no sistema de consórcio Bradesco, com foco em fluxos críticos e regressão estável.",
           "Versionamento com Git, GitLab e GitHub, branches e integração contínua com o fluxo de CI/CD do time de QA.",
@@ -123,21 +139,91 @@ const pt = {
     ],
   },
   certifications: {
-    heading: "Certificações & Educação",
+    heading: "Educação",
     subtitle:
-      "Credenciais e formação completa estão no currículo em PDF — complemente esta seção quando quiser destacar uma certificação.",
-    items: [
+      "Formação acadêmica e cursos complementares na Udemy.",
+    groups: [
       {
-        name: "Trajetória em QA",
-        issuer: "2020 — atual • Lecom • upLexis • Codgo.X",
+        items: [
+          {
+            name: "Ciência da Computação",
+            issuer: "FIB Bauru • Bacharelado • 2021",
+          },
+          {
+            name: "Técnico em Informática",
+            issuer: "ETEC Garça • Ensino Médio Técnico • 2017",
+          },
+        ],
       },
       {
-        name: "Stack em destaque",
-        issuer: "Cypress • Postman • JMeter • Jenkins • GitLab • Jira",
+        label: "Cursos Cypress",
+        items: [
+          {
+            name: "Testes automatizados com Cypress — Básico",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-basico",
+          },
+          {
+            name: "Testes automatizados com Cypress — Intermediário",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-intermediario",
+          },
+          {
+            name: "Testes automatizados com Cypress — Avançado",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-avancado",
+          },
+          {
+            name: "Testes end-to-end com Cypress",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-e2e",
+          },
+        ],
       },
       {
-        name: "Formação & certificações",
-        issuer: "Detalhes no currículo (baixar acima)",
+        label: "Cursos — Desenvolvimento (Udemy)",
+        items: [
+          {
+            name: "Introdução à Linguagem HTML",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "html",
+          },
+          {
+            name: "Introdução à linguagem JavaScript",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "javascript",
+          },
+          {
+            name: "Introdução à linguagem Python",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "python",
+          },
+          {
+            name: "Curso de Algoritmos e Lógica de Programação",
+            issuer: "Miguel Vila • Udemy",
+            id: "algoritmos",
+          },
+          {
+            name: "Aprenda Linguagem C — Fundamentos para Lógica de Programação",
+            issuer: "John Haste • Udemy",
+            id: "linguagem-c",
+          },
+          {
+            name: "Git e GitHub para iniciantes",
+            issuer: "Willian Justen de Vasconcellos • Udemy",
+            id: "git-github",
+          },
+          {
+            name: "Criando Páginas Web com o GitHub Pages",
+            issuer: "Marcos Castro • Udemy",
+            id: "github-pages",
+          },
+          {
+            name: "O curso completo de Banco de Dados e SQL, sem mistérios!",
+            issuer: "Felipe Mafra • Udemy",
+            id: "sql",
+          },
+        ],
       },
     ],
   },
@@ -177,6 +263,13 @@ const en: MessageTree = {
     langPt: "Português",
     langEn: "English",
     langEs: "Español",
+    themeLight: "Switch to light theme",
+    themeDark: "Switch to dark theme",
+  },
+  cvDownload: {
+    downloading: "Preparing download...",
+    done: "Download started!",
+    error: "Download failed — try again",
   },
   hero: {
     badge: "Open to a new challenge",
@@ -190,8 +283,17 @@ const en: MessageTree = {
   },
   about: {
     heading: "About Me",
-    body:
-      "Mid-level QA analyst with hands-on experience in financial products (Bradesco consortium), corporate platforms (marketplace and document workflows), and BPM. Cypress automation, API and performance testing, embedded in Agile teams—with strong emphasis on docs, stable regression, and pre-production quality.",
+    paragraphs: [
+      "5 years breaking software before users do.",
+      "I've worked at Lecom, upLexis, and Codgo.X — automating E2E tests for Bradesco's consortium system. Along the way I took Cypress, API automation, and mobile testing courses — not because I had to, but because I wanted to understand every layer of the process.",
+      "Outside work I started venturing into coding — apps, websites, automations. Still exploring, but already shipping things that work.",
+    ],
+    footer:
+      "Computer Science degree from FIB Bauru. Based in inland São Paulo, available for remote work.",
+    personalHeading: "Off the clock",
+    personalParagraph:
+      "I play the cello — which, technically, is a giant violin — and enjoy games, movies, series, and that kind of thing. A healthy balance between sheet music and screen time.",
+    hobbies: ["Cello", "Games", "Movies", "Shows"],
     photoAlt: "Professional headshot",
     noPhoto1a: "No image in",
     noPhoto1b: "at the project root.",
@@ -201,16 +303,6 @@ const en: MessageTree = {
     noPhoto3a: "Make sure the terminal is in the right folder (e.g.",
     noPhoto3b: ", not another copy like",
     noPhoto3c: ").",
-    bullets: [
-      {
-        title: "E2E, API & performance",
-        desc: "Cypress and Postman for end-to-end flows and contracts; JMeter for load validation; GitLab and CI/CD integration.",
-      },
-      {
-        title: "Agile & traceability",
-        desc: "SCRUM cadence, structured test cases in Jira/Trello, staging support, and production-bound defect validation.",
-      },
-    ],
   },
   tech: {
     title: "Tech Stack",
@@ -219,29 +311,39 @@ const en: MessageTree = {
   projects: {
     heading: "Featured Projects",
     subtitle:
-      "A selection of work that highlights automation, reliability, and production impact.",
+      "Apps I built and products where I delivered quality in production.",
     demo: "Demo",
     repo: "GitHub",
     items: [
       {
-        title: "Smart QA Dashboard",
+        title: "Skimo Graia",
         description:
-          "Dashboard with quality metrics, defect trends, and pipeline integration for real-time decisions.",
+          "Mobile and web app for the Skimo Graia snack bar — menu, cart, pay-on-delivery checkout, order tracking, and admin panel. React Native/Expo with Firebase Auth, Firestore, and optional Node API.",
       },
       {
-        title: "API contract testing suite",
+        title: "CET Comunicação",
         description:
-          "Automated OpenAPI contract suite with reports and CI merge gates for critical APIs.",
+          "Flow control app for CET Comunicação — entry and exit tracking for equipment and people via badge/barcode scanning, withdrawal and return history, asset dashboard, and Excel report export.",
       },
       {
-        title: "Cloud mobile E2E",
+        title: "Personal Finance Control",
         description:
-          "Distributed Appium runs with parallelization and video artifacts for mobile squads.",
+          "Web app live on Vercel plus a desktop build — dashboard, income and expenses, categories, goals, and investments with Firebase login (email or Google). React, TypeScript, and Vite.",
       },
       {
-        title: "CI/CD quality gates",
+        title: "Bradesco Consortium",
         description:
-          "Reusable quality-gate template: coverage, smoke, performance baseline, and stage approvals.",
+          "Cypress E2E automation for Bradesco's consortium system at Codgo.X, covering critical flows, stable regression, and QA CI/CD integration.",
+      },
+      {
+        title: "upLexis Platform",
+        description:
+          "Test coverage for Marketplace, upFolder, and Novo Dossiê — Cypress and Postman E2E/API automation, JMeter performance, and production fix validation.",
+      },
+      {
+        title: "Lecom BPM",
+        description:
+          "Manual Web and Mobile testing on Lecom BPM, SQL validation scripts (SQL Server, Oracle, MySQL), and Jenkins environment management for stable test cycles.",
       },
     ],
   },
@@ -252,7 +354,7 @@ const en: MessageTree = {
       {
         role: "Mid-Level Test Analyst",
         company: "Codgo.X",
-        period: "2024 — Present",
+        period: "2024 — Jun 2025",
         points: [
           "E2E test development and maintenance with Cypress for Bradesco consortium software, guarding critical workflows and regression stability.",
           "Git / GitLab / GitHub versioning, branching, and integration with QA CI/CD pipelines.",
@@ -287,21 +389,91 @@ const en: MessageTree = {
     ],
   },
   certifications: {
-    heading: "Certifications & education",
+    heading: "Education",
     subtitle:
-      "Full credentials are in the PDF résumé—add specific certifications here whenever you want them highlighted.",
-    items: [
+      "Academic background and complementary courses on Udemy.",
+    groups: [
       {
-        name: "QA trajectory",
-        issuer: "2020 — present • Lecom • upLexis • Codgo.X",
+        items: [
+          {
+            name: "Computer Science",
+            issuer: "FIB Bauru • Bachelor's degree • 2021",
+          },
+          {
+            name: "IT Technician",
+            issuer: "ETEC Garça • Technical high school • 2017",
+          },
+        ],
       },
       {
-        name: "Highlighted stack",
-        issuer: "Cypress • Postman • JMeter • Jenkins • GitLab • Jira",
+        label: "Cypress Courses",
+        items: [
+          {
+            name: "Automated Testing with Cypress — Basic",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-basico",
+          },
+          {
+            name: "Automated Testing with Cypress — Intermediate",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-intermediario",
+          },
+          {
+            name: "Automated Testing with Cypress — Advanced",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-avancado",
+          },
+          {
+            name: "End-to-End Testing with Cypress",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-e2e",
+          },
+        ],
       },
       {
-        name: "Degrees & certs",
-        issuer: "See résumé (download above)",
+        label: "Courses — Development (Udemy)",
+        items: [
+          {
+            name: "Introduction to HTML",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "html",
+          },
+          {
+            name: "Introduction to JavaScript",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "javascript",
+          },
+          {
+            name: "Introduction to Python",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "python",
+          },
+          {
+            name: "Algorithms and Programming Logic",
+            issuer: "Miguel Vila • Udemy",
+            id: "algoritmos",
+          },
+          {
+            name: "Learn C Language — Fundamentals for Programming Logic",
+            issuer: "John Haste • Udemy",
+            id: "linguagem-c",
+          },
+          {
+            name: "Git and GitHub for Beginners",
+            issuer: "Willian Justen de Vasconcellos • Udemy",
+            id: "git-github",
+          },
+          {
+            name: "Creating Web Pages with GitHub Pages",
+            issuer: "Marcos Castro • Udemy",
+            id: "github-pages",
+          },
+          {
+            name: "The Complete Database and SQL Course — No Mysteries!",
+            issuer: "Felipe Mafra • Udemy",
+            id: "sql",
+          },
+        ],
       },
     ],
   },
@@ -337,6 +509,13 @@ const es: MessageTree = {
     langPt: "Português",
     langEn: "English",
     langEs: "Español",
+    themeLight: "Activar tema claro",
+    themeDark: "Activar tema oscuro",
+  },
+  cvDownload: {
+    downloading: "Preparando descarga...",
+    done: "¡Descarga iniciada!",
+    error: "Error al descargar — inténtalo de nuevo",
   },
   hero: {
     badge: "Disponible para un nuevo reto",
@@ -350,8 +529,17 @@ const es: MessageTree = {
   },
   about: {
     heading: "Sobre mí",
-    body:
-      "Analista de pruebas pleno con experiencia en servicios financieros (consorcio Bradesco), plataformas corporativas (marketplace y flujos documentales) y BPM. Combino Cypress, pruebas de API y de rendimiento dentro de equipos ágiles, con foco en documentación, regresión estable y calidad antes de producción.",
+    paragraphs: [
+      "5 años rompiendo software antes de que lo rompa el usuario.",
+      "Pasé por empresas como Lecom, upLexis y Codgo.X — automatizando pruebas E2E para el consorcio de Bradesco. En el camino hice cursos de Cypress, automatización de API y pruebas mobile — no por obligación, sino porque quería entender cada capa del proceso.",
+      "Fuera del trabajo empecé a aventurarme a programar cosas como apps, sitios y automatizaciones. Aún explorando, pero ya entregando cosas que funcionan.",
+    ],
+    footer:
+      "Ciencias de la Computación por la FIB Bauru. Interior de SP, disponible para remoto.",
+    personalHeading: "Fuera del trabajo",
+    personalParagraph:
+      "Toco violoncelo — que, técnicamente, es un violín gigante — y me gustan los juegos, películas, series y ese tipo de cosas. Un equilibrio sano entre partitura y pantalla.",
+    hobbies: ["Violoncelo", "Juegos", "Películas", "Series"],
     photoAlt: "Retrato profesional",
     noPhoto1a: "No hay imagen en",
     noPhoto1b: "en la raíz del proyecto.",
@@ -361,16 +549,6 @@ const es: MessageTree = {
     noPhoto3a: "Comprueba que la terminal esté en la carpeta correcta (p. ej.",
     noPhoto3b: ", no otra copia como",
     noPhoto3c: ").",
-    bullets: [
-      {
-        title: "E2E, API y rendimiento",
-        desc: "Cypress y Postman para flujos punta a punta y contratos; JMeter para validación bajo carga; GitLab e integración CI/CD.",
-      },
-      {
-        title: "Agilidad y trazabilidad",
-        desc: "SCRUM, casos de prueba en Jira/Trello, homologación y soporte ágil al desarrollo con feedback claro.",
-      },
-    ],
   },
   tech: {
     title: "Tech Stack",
@@ -379,29 +557,39 @@ const es: MessageTree = {
   projects: {
     heading: "Proyectos destacados",
     subtitle:
-      "Una selección de trabajos que muestran automatización, fiabilidad e impacto en producción.",
+      "Apps que desarrollé y productos en los que aseguré calidad en producción.",
     demo: "Demo",
     repo: "GitHub",
     items: [
       {
-        title: "Panel QA inteligente",
+        title: "Skimo Graia",
         description:
-          "Panel con métricas de calidad, tendencias de defectos e integración con pipelines para decisiones en tiempo real.",
+          "App móvil y web para la lanchonete Skimo Graia — menú, carrito, checkout con pago en la entrega, seguimiento de pedidos y panel admin. React Native/Expo con Firebase Auth, Firestore y API Node opcional.",
       },
       {
-        title: "Suite de contratos de API",
+        title: "CET Comunicação",
         description:
-          "Suite automatizada de contratos OpenAPI con informes y gates de CI para APIs críticas.",
+          "App de control de flujo para CET Comunicação — registro de entrada y salida de equipos y personas mediante lectura de credencial/código de barras, historial de retiros y devoluciones, panel de patrimonio y exportación de informes en Excel.",
       },
       {
-        title: "E2E móvil en la nube",
+        title: "Control Financiero",
         description:
-          "Ejecución distribuida de Appium con paralelización y vídeos para squads mobile.",
+          "App web publicada en Vercel y versión de escritorio — dashboard, ingresos y gastos, categorías, metas e inversiones con login Firebase (correo o Google). React, TypeScript y Vite.",
       },
       {
-        title: "Quality gates CI/CD",
+        title: "Consorcio Bradesco",
         description:
-          "Plantilla reutilizable: cobertura, smoke, baseline de rendimiento y aprobación por etapa.",
+          "Automatización E2E con Cypress en el sistema de consorcio de Bradesco en Codgo.X, cubriendo flujos críticos, regresión estable e integración CI/CD del equipo de QA.",
+      },
+      {
+        title: "upLexis Platform",
+        description:
+          "Cobertura de pruebas para Marketplace, upFolder y Novo Dossiê — automatización E2E y API con Cypress y Postman, rendimiento con JMeter y validación de correcciones en producción.",
+      },
+      {
+        title: "Lecom BPM",
+        description:
+          "Pruebas manuales Web y Mobile en Lecom BPM, validación con scripts SQL (SQL Server, Oracle, MySQL) y gestión de entornos Jenkins para ciclos de prueba estables.",
       },
     ],
   },
@@ -413,7 +601,7 @@ const es: MessageTree = {
       {
         role: "Analista de Pruebas Pleno",
         company: "Codgo.X",
-        period: "2024 — Actualidad",
+        period: "2024 — Jun 2025",
         points: [
           "Automatización E2E con Cypress en el sistema de consorcio Bradesco, priorizando flujos críticos y regresión estable.",
           "Versionado con Git, GitLab y GitHub, ramas y flujo integrado al CI/CD del equipo de QA.",
@@ -448,21 +636,91 @@ const es: MessageTree = {
     ],
   },
   certifications: {
-    heading: "Certificaciones y formación",
+    heading: "Formación",
     subtitle:
-      "Las credenciales completas están en el CV en PDF; puedes destacar aquí una certificación cuando lo desees.",
-    items: [
+      "Formación académica y cursos complementarios en Udemy.",
+    groups: [
       {
-        name: "Trayectoria en QA",
-        issuer: "2020 — actual • Lecom • upLexis • Codgo.X",
+        items: [
+          {
+            name: "Ciencias de la Computación",
+            issuer: "FIB Bauru • Licenciatura • 2021",
+          },
+          {
+            name: "Técnico en Informática",
+            issuer: "ETEC Garça • Educación técnica • 2017",
+          },
+        ],
       },
       {
-        name: "Stack destacado",
-        issuer: "Cypress • Postman • JMeter • Jenkins • GitLab • Jira",
+        label: "Cursos Cypress",
+        items: [
+          {
+            name: "Pruebas automatizadas con Cypress — Básico",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-basico",
+          },
+          {
+            name: "Pruebas automatizadas con Cypress — Intermedio",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-intermediario",
+          },
+          {
+            name: "Pruebas automatizadas con Cypress — Avanzado",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-avancado",
+          },
+          {
+            name: "Pruebas end-to-end con Cypress",
+            issuer: "Walmyr Filho • Udemy",
+            id: "cypress-e2e",
+          },
+        ],
       },
       {
-        name: "Formación y certificaciones",
-        issuer: "Ver CV (descarga arriba)",
+        label: "Cursos — Desarrollo (Udemy)",
+        items: [
+          {
+            name: "Introducción al lenguaje HTML",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "html",
+          },
+          {
+            name: "Introducción al lenguaje JavaScript",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "javascript",
+          },
+          {
+            name: "Introducción al lenguaje Python",
+            issuer: "Diego Mariano, Ph.D. • Udemy",
+            id: "python",
+          },
+          {
+            name: "Curso de Algoritmos y Lógica de Programación",
+            issuer: "Miguel Vila • Udemy",
+            id: "algoritmos",
+          },
+          {
+            name: "Aprende Lenguaje C — Fundamentos para Lógica de Programación",
+            issuer: "John Haste • Udemy",
+            id: "linguagem-c",
+          },
+          {
+            name: "Git y GitHub para principiantes",
+            issuer: "Willian Justen de Vasconcellos • Udemy",
+            id: "git-github",
+          },
+          {
+            name: "Creando Páginas Web con GitHub Pages",
+            issuer: "Marcos Castro • Udemy",
+            id: "github-pages",
+          },
+          {
+            name: "El curso completo de Base de Datos y SQL, ¡sin misterios!",
+            issuer: "Felipe Mafra • Udemy",
+            id: "sql",
+          },
+        ],
       },
     ],
   },

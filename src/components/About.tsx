@@ -21,7 +21,7 @@ export function About() {
   const { copy } = useI18n();
 
   return (
-    <section id="sobre" className="border-t border-white/5 py-20 sm:py-24">
+    <section id="sobre" className="border-t border-slate-200 dark:border-white/5 py-20 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:grid-cols-2 sm:gap-16 sm:px-6">
         <Reveal>
           <div className="relative mx-auto aspect-square max-w-sm sm:mx-0">
@@ -32,7 +32,7 @@ export function About() {
                   "linear-gradient(135deg, #22d3ee, #8b5cf6, #c4b5fd)",
               }}
             />
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-night-card">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-300 bg-white dark:border-white/10 dark:bg-[#120e1c]">
               {profilePhoto ? (
                 <img
                   src={profilePhoto}
@@ -44,7 +44,7 @@ export function About() {
                   decoding="async"
                 />
               ) : (
-                <div className="flex h-full min-h-[280px] flex-col items-center justify-center gap-2 bg-night-elevated p-6 text-center text-sm text-zinc-500">
+                <div className="flex h-full min-h-[280px] flex-col items-center justify-center gap-2 bg-slate-100 dark:bg-[#1a1428] p-6 text-center text-sm text-slate-500 dark:text-zinc-500">
                   <p>
                     {copy.about.noPhoto1a}{" "}
                     <code className="text-accent-cyan">foto/</code>{" "}
@@ -57,7 +57,7 @@ export function About() {
                     <code className="text-accent-cyan">eu.png</code>{" "}
                     {copy.about.noPhoto2c}
                   </p>
-                  <p className="text-xs text-zinc-600">
+                  <p className="text-xs text-slate-400 dark:text-zinc-600">
                     {copy.about.noPhoto3a}{" "}
                     <code className="text-accent-cyan">portifolio</code>{" "}
                     {copy.about.noPhoto3b}{" "}
@@ -72,39 +72,37 @@ export function About() {
 
         <Reveal delay={0.1}>
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
               {copy.about.heading}
             </h2>
-            <p className="mt-6 leading-relaxed text-zinc-400">{copy.about.body}</p>
-            <ul className="mt-8 space-y-5">
-              {copy.about.bullets.map((b) => (
-                <li
-                  key={b.title}
-                  className="flex gap-4 rounded-xl border border-white/5 bg-night-card/50 p-4"
-                >
-                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-purpledeep/20 text-accent-cyan">
-                    <svg
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <p className="font-semibold text-white">{b.title}</p>
-                    <p className="mt-1 text-sm text-zinc-500">{b.desc}</p>
-                  </div>
-                </li>
+            <div className="mt-6 space-y-4 leading-relaxed text-slate-600 dark:text-zinc-400">
+              {copy.about.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
-            </ul>
+            </div>
+
+            <div className="mt-8 border-t border-slate-200 pt-8 dark:border-white/10">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-accent-purple">
+                {copy.about.personalHeading}
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-600 dark:text-zinc-400">
+                {copy.about.personalParagraph}
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {copy.about.hobbies.map((hobby) => (
+                  <li
+                    key={hobby}
+                    className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:bg-[#120e1c] dark:text-zinc-300"
+                  >
+                    {hobby}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p className="mt-8 text-sm text-slate-500 dark:text-zinc-500">
+              {copy.about.footer}
+            </p>
           </div>
         </Reveal>
       </div>
