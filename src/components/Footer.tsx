@@ -19,7 +19,7 @@ export function Footer() {
             rel="noreferrer"
             className="hover:text-accent-purple"
           >
-            LinkedIn
+            {copy.footer.linkedin}
           </a>
           <a
             href={SITE_CONTACT.github}
@@ -27,7 +27,7 @@ export function Footer() {
             rel="noreferrer"
             className="hover:text-accent-purple"
           >
-            GitHub
+            {copy.footer.github}
           </a>
           <a
             href={SITE_CONTACT.whatsapp}
@@ -35,13 +35,13 @@ export function Footer() {
             rel="noopener noreferrer"
             className="hover:text-accent-purple"
           >
-            WhatsApp
+            {copy.footer.whatsapp}
           </a>
           <a
             href={`mailto:${SITE_CONTACT.email}`}
             className="hover:text-accent-purple"
           >
-            Email
+            {copy.footer.email}
           </a>
           <CvDownloadButton label={copy.footer.resume} variant="link" />
         </nav>

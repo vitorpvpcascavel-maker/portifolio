@@ -75,6 +75,9 @@ export function About() {
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
               {copy.about.heading}
             </h2>
+            <p className="mt-2 text-lg font-medium text-slate-700 dark:text-zinc-300">
+              {copy.about.intro}
+            </p>
             <div className="mt-6 space-y-4 leading-relaxed text-slate-600 dark:text-zinc-400">
               {copy.about.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>

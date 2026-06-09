@@ -9,7 +9,7 @@ export function Certifications() {
   const { copy } = useI18n();
 
   return (
-    <section className="border-t border-slate-200 py-20 dark:border-white/5 sm:py-24">
+    <section id="educacao" className="border-t border-slate-200 py-20 dark:border-white/5 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
           {copy.certifications.heading}

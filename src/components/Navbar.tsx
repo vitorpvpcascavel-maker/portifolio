@@ -13,9 +13,11 @@ export function Navbar() {
   const links = useMemo(
     () => [
       { href: "#inicio", label: copy.nav.inicio },
-      { href: "#experiencias", label: copy.nav.experiencias },
+      { href: "#sobre", label: copy.nav.sobre },
       { href: "#projetos", label: copy.nav.projetos },
+      { href: "#experiencias", label: copy.nav.experiencias },
       { href: "#especializacao", label: copy.nav.especializacao },
+      { href: "#educacao", label: copy.nav.educacao },
       { href: "#contato", label: copy.nav.contato },
     ],
     [copy.nav]
@@ -36,7 +38,7 @@ export function Navbar() {
           {copy.nav.brand}
         </a>
 
-        <ul className="hidden items-center gap-6 text-sm font-medium text-slate-600 dark:text-zinc-400 md:flex">
+        <ul className="hidden items-center gap-3 text-xs font-medium text-slate-600 dark:text-zinc-400 lg:flex lg:gap-4 lg:text-sm">
           {links.map((l) => (
             <li key={l.href}>
               <a
@@ -59,7 +61,7 @@ export function Navbar() {
           <ThemeToggle />
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-900 dark:border-white/10 dark:text-white md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-900 dark:border-white/10 dark:text-white lg:hidden"
             aria-expanded={open}
             aria-label={open ? copy.nav.closeMenu : copy.nav.openMenu}
             onClick={() => setOpen((v) => !v)}
@@ -76,7 +78,7 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-b border-slate-200 bg-white/95 dark:border-white/5 dark:bg-[#0a0612]/95 md:hidden"
+            className="overflow-hidden border-b border-slate-200 bg-white/95 dark:border-white/5 dark:bg-[#0a0612]/95 lg:hidden"
           >
             <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-slate-700 dark:text-zinc-300">
               {links.map((l) => (

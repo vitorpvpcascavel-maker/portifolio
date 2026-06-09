@@ -70,7 +70,7 @@ export function LanguageSwitcher({ className = "" }: LanguageSwitcherProps) {
   return (
     <div
       role="group"
-      aria-label="Idioma / Language"
+      aria-label={copy.nav.langSwitch}
       className={`inline-flex items-center gap-0.5 rounded-lg border border-slate-300 bg-white p-0.5 dark:border-white/10 dark:bg-[#120e1c]/60 ${className}`}
     >
       {OPTIONS.map(({ locale: loc, Flag, labelKey }) => {

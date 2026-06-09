@@ -2,9 +2,11 @@ const pt = {
   nav: {
     brand: "QA Engineer",
     inicio: "Início",
-    experiencias: "Experiências",
+    sobre: "Sobre mim",
     projetos: "Projetos",
+    experiencias: "Experiências",
     especializacao: "Especialização",
+    educacao: "Educação",
     contato: "Contato",
     downloadCv: "Baixar Currículo",
     openMenu: "Abrir menu",
@@ -12,8 +14,14 @@ const pt = {
     langPt: "Português",
     langEn: "English",
     langEs: "Español",
+    langSwitch: "Idioma",
     themeLight: "Ativar tema claro",
     themeDark: "Ativar tema escuro",
+  },
+  meta: {
+    title: "Victor Daniel — QA Engineer",
+    description:
+      "Portfólio de Victor Daniel — QA Engineer com experiência em automação Cypress, APIs, banco de dados e testes mobile.",
   },
   cvDownload: {
     downloading: "Preparando download...",
@@ -22,18 +30,19 @@ const pt = {
   },
   hero: {
     badge: "Disponível para um novo desafio",
-    titleBefore: "Arquitetando",
-    titleHighlight: "Sistemas de Automação",
-    titleAfter: "para Software Resiliente.",
+    titleBefore: "QA Engineer e",
+    titleHighlight: "me aventurando codando",
+    titleAfter: "algumas coisas.",
     subtitle:
-      "Foco em pipelines CI/CD, automação moderna e soluções robustas que reduzem risco, aceleram entregas e elevam a confiabilidade do produto do início ao deploy.",
+      "6 anos na área de qualidade — bastante exp em automação de testes com Cypress, APIs, banco de dados e testes mobile. E agora tentando codar também alguns: apps, sites, o que aparecer.",
     projects: "Meus Projetos",
     viewCv: "Conhecer Currículo",
   },
   about: {
     heading: "Sobre Mim",
+    intro: "Victor Daniel — 26 anos",
     paragraphs: [
-      "5 anos quebrando software antes que o usuário quebre.",
+      "6 anos quebrando software antes que o usuário quebre.",
       "Passei por empresas como a Lecom, upLexis e Codgo.X — automatizando testes E2E pro consórcio do Bradesco. No meio do caminho fiz uns cursos de Cypress, automação de API e testes mobile — não por obrigação, mas porque queria entender cada camada do processo.",
       "Fora do trabalho comecei a me aventurar a codar algumas coisas, como apps, sites e automações. Ainda me aventurando, mas já entregando coisa funcionando.",
     ],
@@ -235,13 +244,19 @@ const pt = {
     formName: "Nome",
     formEmail: "E-mail",
     formMessage: "Mensagem",
-    formSubmit: "Enviar Mensagem",
+    formSubmit: "Enviar via WhatsApp",
     formThanks:
-      "Obrigado! Em um projeto real, isso enviaria para um backend ou serviço de formulário.",
+      "WhatsApp aberto com sua mensagem. Se não abrir, use o número ao lado.",
+    whatsappMessage:
+      "Olá Victor! Meu nome é {name} ({email}).\n\n{message}",
   },
   footer: {
     rights: "Todos os direitos reservados.",
     resume: "Currículo",
+    linkedin: "LinkedIn",
+    github: "GitHub",
+    whatsapp: "WhatsApp",
+    email: "E-mail",
   },
 };
 
@@ -253,9 +268,11 @@ const en: MessageTree = {
   nav: {
     brand: "QA Engineer",
     inicio: "Home",
-    experiencias: "Experience",
+    sobre: "About",
     projetos: "Projects",
+    experiencias: "Experience",
     especializacao: "Stack",
+    educacao: "Education",
     contato: "Contact",
     downloadCv: "Download CV",
     openMenu: "Open menu",
@@ -263,8 +280,14 @@ const en: MessageTree = {
     langPt: "Português",
     langEn: "English",
     langEs: "Español",
+    langSwitch: "Language",
     themeLight: "Switch to light theme",
     themeDark: "Switch to dark theme",
+  },
+  meta: {
+    title: "Victor Daniel — QA Engineer",
+    description:
+      "Portfolio of Victor Daniel — QA Engineer with experience in Cypress automation, APIs, databases, and mobile testing.",
   },
   cvDownload: {
     downloading: "Preparing download...",
@@ -273,18 +296,19 @@ const en: MessageTree = {
   },
   hero: {
     badge: "Open to a new challenge",
-    titleBefore: "Architecting",
-    titleHighlight: "Automation Systems",
-    titleAfter: "for Resilient Software.",
+    titleBefore: "QA Engineer",
+    titleHighlight: "venturing into coding",
+    titleAfter: "on the side.",
     subtitle:
-      "Focused on CI/CD pipelines, modern automation, and robust solutions that reduce risk, speed up delivery, and improve product reliability from start to deploy.",
+      "6 years in quality — solid experience in test automation with Cypress, APIs, databases, and mobile testing. Now also trying my hand at building things: apps, websites, whatever comes up.",
     projects: "My Projects",
     viewCv: "View resume",
   },
   about: {
     heading: "About Me",
+    intro: "Victor Daniel — 26 years old",
     paragraphs: [
-      "5 years breaking software before users do.",
+      "6 years breaking software before users do.",
       "I've worked at Lecom, upLexis, and Codgo.X — automating E2E tests for Bradesco's consortium system. Along the way I took Cypress, API automation, and mobile testing courses — not because I had to, but because I wanted to understand every layer of the process.",
       "Outside work I started venturing into coding — apps, websites, automations. Still exploring, but already shipping things that work.",
     ],
@@ -485,13 +509,19 @@ const en: MessageTree = {
     formName: "Name",
     formEmail: "Email",
     formMessage: "Message",
-    formSubmit: "Send message",
+    formSubmit: "Send via WhatsApp",
     formThanks:
-      "Thanks! In a real project this would post to a backend or form service.",
+      "WhatsApp opened with your message. If it didn't open, use the number on the left.",
+    whatsappMessage:
+      "Hi Victor! My name is {name} ({email}).\n\n{message}",
   },
   footer: {
     rights: "All rights reserved.",
     resume: "Resume",
+    linkedin: "LinkedIn",
+    github: "GitHub",
+    whatsapp: "WhatsApp",
+    email: "Email",
   },
 };
 
@@ -499,9 +529,11 @@ const es: MessageTree = {
   nav: {
     brand: "QA Engineer",
     inicio: "Inicio",
-    experiencias: "Experiencia",
+    sobre: "Sobre mí",
     projetos: "Proyectos",
+    experiencias: "Experiencia",
     especializacao: "Stack",
+    educacao: "Educación",
     contato: "Contacto",
     downloadCv: "Descargar CV",
     openMenu: "Abrir menú",
@@ -509,8 +541,14 @@ const es: MessageTree = {
     langPt: "Português",
     langEn: "English",
     langEs: "Español",
+    langSwitch: "Idioma",
     themeLight: "Activar tema claro",
     themeDark: "Activar tema oscuro",
+  },
+  meta: {
+    title: "Victor Daniel — QA Engineer",
+    description:
+      "Portafolio de Victor Daniel — QA Engineer con experiencia en automatización Cypress, APIs, bases de datos y pruebas mobile.",
   },
   cvDownload: {
     downloading: "Preparando descarga...",
@@ -519,18 +557,19 @@ const es: MessageTree = {
   },
   hero: {
     badge: "Disponible para un nuevo reto",
-    titleBefore: "Diseñando",
-    titleHighlight: "Sistemas de Automatización",
-    titleAfter: "para software resiliente.",
+    titleBefore: "QA Engineer y",
+    titleHighlight: "aventurándome a codear",
+    titleAfter: "algunas cosas.",
     subtitle:
-      "Enfoque en pipelines CI/CD, automatización moderna y soluciones robustas que reducen riesgo, aceleran entregas y mejoran la confiabilidad del producto del inicio al deploy.",
+      "6 años en calidad — mucha experiencia en automatización de pruebas con Cypress, APIs, bases de datos y pruebas mobile. Y ahora intentando codear también: apps, sitios, lo que surja.",
     projects: "Mis proyectos",
     viewCv: "Ver currículum",
   },
   about: {
     heading: "Sobre mí",
+    intro: "Victor Daniel — 26 años",
     paragraphs: [
-      "5 años rompiendo software antes de que lo rompa el usuario.",
+      "6 años rompiendo software antes de que lo rompa el usuario.",
       "Pasé por empresas como Lecom, upLexis y Codgo.X — automatizando pruebas E2E para el consorcio de Bradesco. En el camino hice cursos de Cypress, automatización de API y pruebas mobile — no por obligación, sino porque quería entender cada capa del proceso.",
       "Fuera del trabajo empecé a aventurarme a programar cosas como apps, sitios y automatizaciones. Aún explorando, pero ya entregando cosas que funcionan.",
     ],
@@ -732,13 +771,19 @@ const es: MessageTree = {
     formName: "Nombre",
     formEmail: "Correo",
     formMessage: "Mensaje",
-    formSubmit: "Enviar mensaje",
+    formSubmit: "Enviar por WhatsApp",
     formThanks:
-      "¡Gracias! En un proyecto real esto iría a un backend o servicio de formularios.",
+      "WhatsApp abierto con tu mensaje. Si no se abrió, usa el número al lado.",
+    whatsappMessage:
+      "Hola Victor! Me llamo {name} ({email}).\n\n{message}",
   },
   footer: {
     rights: "Todos los derechos reservados.",
     resume: "Currículum",
+    linkedin: "LinkedIn",
+    github: "GitHub",
+    whatsapp: "WhatsApp",
+    email: "Correo",
   },
 };
 

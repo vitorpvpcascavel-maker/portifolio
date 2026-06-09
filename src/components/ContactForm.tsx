@@ -1,6 +1,7 @@
 import { type FormEvent, useState } from "react";
 
 import { useI18n } from "../i18n/useI18n";
+import { whatsAppContactUrl } from "../site";
 
 const inputClass =
   "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-accent-purple/40 focus:ring-2 focus:ring-accent-purple/30 dark:border-white/10 dark:bg-[#0a0612]/80 dark:text-white dark:placeholder:text-zinc-600";
@@ -11,7 +12,24 @@ export function ContactForm() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("nome") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("mensagem") ?? "").trim();
+
+    if (!name || !email || !message) {
+      return;
+    }
+
+    const url = whatsAppContactUrl(copy.contact.whatsappMessage, {
+      name,
+      email,
+      message,
+    });
+    window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
+    form.reset();
   }
 
   return (

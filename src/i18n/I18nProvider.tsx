@@ -44,6 +44,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = htmlLang(locale);
+    document.title = messages[locale].meta.title;
+
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute("content", messages[locale].meta.description);
+    }
   }, [locale]);
 
   const value = useMemo<I18nContextValue>(

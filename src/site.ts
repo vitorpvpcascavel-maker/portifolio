@@ -20,6 +20,17 @@ export function cvForLocale(locale: Locale): { url: string; filename: string } {
   return { url: `/cv/${filename}`, filename };
 }
 
+export function whatsAppContactUrl(
+  template: string,
+  fields: { name: string; email: string; message: string }
+) {
+  const text = template
+    .replaceAll("{name}", fields.name)
+    .replaceAll("{email}", fields.email)
+    .replaceAll("{message}", fields.message);
+  return `${SITE_CONTACT.whatsapp}?text=${encodeURIComponent(text)}`;
+}
+
 export async function downloadCvFile(url: string, filename: string) {
   const response = await fetch(url);
   if (!response.ok) {
