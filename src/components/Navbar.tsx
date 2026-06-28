@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { useMemo, useState } from "react";
 
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -24,12 +23,7 @@ export function Navbar() {
   );
 
   return (
-    <motion.header
-      initial={{ y: -16, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl dark:border-white/5 dark:bg-[#0a0612]/80"
-    >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl dark:border-white/5 dark:bg-[#0a0612]/80">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <a
           href="#inicio"
@@ -71,43 +65,35 @@ export function Navbar() {
         </div>
       </nav>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="overflow-hidden border-b border-slate-200 bg-white/95 dark:border-white/5 dark:bg-[#0a0612]/95 lg:hidden"
-          >
-            <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-slate-700 dark:text-zinc-300">
-              {links.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="block rounded-lg px-3 py-2 hover:bg-slate-100 hover:text-accent-purple dark:hover:bg-white/5"
-                    onClick={() => setOpen(false)}
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-              <li className="pt-2">
-                <CvDownloadButton
-                  label={copy.nav.downloadCv}
-                  variant="primary"
-                  className="w-full px-3 py-2.5 text-center text-sm"
-                  onAfterClick={() => setOpen(false)}
-                />
+      {open && (
+        <div className="border-b border-slate-200 bg-white/95 dark:border-white/5 dark:bg-[#0a0612]/95 lg:hidden">
+          <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-slate-700 dark:text-zinc-300">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="block rounded-lg px-3 py-2 hover:bg-slate-100 hover:text-accent-purple dark:hover:bg-white/5"
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </a>
               </li>
-              <li className="flex justify-center gap-2 pb-2 pt-4">
-                <LanguageSwitcher />
-                <ThemeToggle />
-              </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+            ))}
+            <li className="pt-2">
+              <CvDownloadButton
+                label={copy.nav.downloadCv}
+                variant="primary"
+                className="w-full px-3 py-2.5 text-center text-sm"
+                onAfterClick={() => setOpen(false)}
+              />
+            </li>
+            <li className="flex justify-center gap-2 pb-2 pt-4">
+              <LanguageSwitcher />
+              <ThemeToggle />
+            </li>
+          </ul>
+        </div>
+      )}
+    </header>
   );
 }

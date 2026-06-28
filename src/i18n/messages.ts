@@ -19,14 +19,18 @@ const pt = {
     themeDark: "Ativar tema escuro",
   },
   meta: {
-    title: "Victor Daniel — QA Engineer",
+    title: "Victor Daniel | QA Engineer",
     description:
-      "Portfólio de Victor Daniel — QA Engineer com experiência em automação Cypress, APIs, banco de dados e testes mobile.",
+      "Portfólio de Victor Daniel, QA Engineer com experiência em automação Cypress, APIs, banco de dados e testes mobile.",
   },
   cvDownload: {
     downloading: "Preparando download...",
     done: "Download iniciado!",
-    error: "Erro ao baixar — tente de novo",
+    error: "Erro ao baixar. Tente de novo",
+  },
+  gallery: {
+    protectedPreview: "Prévia protegida",
+    protectedHint: "Me contrate para ver o resto haha",
   },
   hero: {
     badge: "Disponível para um novo desafio",
@@ -34,23 +38,23 @@ const pt = {
     titleHighlight: "me aventurando codando",
     titleAfter: "algumas coisas.",
     subtitle:
-      "6 anos na área de qualidade — bastante exp em automação de testes com Cypress, APIs, banco de dados e testes mobile. E agora tentando codar também alguns: apps, sites, o que aparecer.",
+      "6 anos na área de qualidade, com bastante exp em automação de testes com Cypress, APIs, banco de dados e testes mobile. E agora tentando codar também alguns: apps, sites, o que aparecer.",
     projects: "Meus Projetos",
     viewCv: "Conhecer Currículo",
   },
   about: {
     heading: "Sobre Mim",
-    intro: "Victor Daniel — 26 anos",
+    intro: "Victor Daniel (26 anos)",
     paragraphs: [
       "6 anos quebrando software antes que o usuário quebre.",
-      "Passei por empresas como a Lecom, upLexis e Codgo.X — automatizando testes E2E pro consórcio do Bradesco. No meio do caminho fiz uns cursos de Cypress, automação de API e testes mobile — não por obrigação, mas porque queria entender cada camada do processo.",
+      "Passei por empresas como a Lecom, upLexis e Codgo.X, automatizando testes E2E pro consórcio do Bradesco. No meio do caminho fiz uns cursos de Cypress, automação de API e testes mobile (não por obrigação, mas porque queria entender cada camada do processo).",
       "Fora do trabalho comecei a me aventurar a codar algumas coisas, como apps, sites e automações. Ainda me aventurando, mas já entregando coisa funcionando.",
     ],
     footer:
       "Ciência da Computação pela FIB Bauru. Interior de SP, disponível pra remoto.",
     personalHeading: "Fora do trampo",
     personalParagraph:
-      "Toco violoncelo — que, tecnicamente, é um violino gigante — e curto jogos, filmes, séries e esse tipo de coisa. Um equilíbrio saudável entre partitura e tela.",
+      "Toco violoncelo (que, tecnicamente, é um violino gigante) e curto jogos, filmes, séries e esse tipo de coisa. Um equilíbrio saudável entre partitura e tela.",
     hobbies: ["Violoncelo", "Jogos", "Filmes", "Séries"],
     photoAlt: "Retrato profissional",
     noPhoto1a: "Nenhuma imagem em",
@@ -69,39 +73,114 @@ const pt = {
   projects: {
     heading: "Projetos em Destaque",
     subtitle:
-      "Apps que desenvolvi e produtos em que garanti qualidade em produção.",
+      "Apps que desenvolvi e produtos corporativos em que atuei com QA e automação.",
     demo: "Demo",
     repo: "GitHub",
+    viewScreens: "Visualizar",
+    skimoGallery: {
+      entryLogin: "Entrada: login",
+      entrySignup: "Entrada: criar conta",
+      entryGuest: "Entrada: convidado",
+      home: "Home",
+      catalog: "Cardápio",
+      cart: "Carrinho",
+      offers: "Ofertas",
+      profile: "Perfil",
+      help: "Ajuda",
+      paymentMethods: "Métodos de pagamento",
+      privacy: "Privacidade",
+      address: "Confirmar endereço",
+      checkout: "Checkout",
+      tracking: "Rastrear pedido",
+      orders: "Meus pedidos",
+      adminLogin: "Admin: login",
+      adminDashboard: "Admin: painel",
+      adminOrders: "Admin: pedidos",
+      adminCredit: "Admin: fiados",
+      adminOffers: "Admin: ofertas",
+      adminAnalytics: "Admin: análises",
+      adminSettings: "Admin: configurações",
+    },
+    skimoChatbotGallery: {
+      panelOverview: "Painel: visão geral",
+      kanban: "Painel: quadro Kanban",
+      chatThread: "Painel: chat WhatsApp",
+      newOrder: "Modal: novo pedido",
+      storeSettings: "Modal: configurações da loja",
+    },
+    cetComunicacaoGallery: {
+      panel: "Painel principal",
+      equipment: "Equipamentos",
+      history: "Histórico",
+      reports: "Relatórios",
+    },
+    mvEmporioGallery: {
+      login: "Login",
+      shopCatalog: "Loja: catálogo",
+      shopPromos: "Loja: promoções",
+      shopCart: "Loja: carrinho",
+      shopCheckout: "Loja: checkout",
+      shopOrders: "Loja: pedidos",
+      shopProfile: "Loja: perfil",
+      caixaPdv: "Caixa: PDV",
+      caixaOrders: "Caixa: pedidos",
+      caixaPricing: "Caixa: preços e margem",
+      caixaStock: "Caixa: estoque",
+      caixaIntake: "Caixa: entrada de produtos",
+      adminDashboard: "Admin: painel",
+      adminOrders: "Admin: pedidos",
+      adminBilling: "Admin: faturamento",
+      adminProducts: "Admin: produtos",
+      adminPricing: "Admin: precificação",
+      adminPromos: "Admin: promoções",
+      adminReports: "Admin: relatórios",
+      adminInventory: "Admin: inventário",
+    },
     items: [
       {
         title: "Skimo Graia",
         description:
-          "App mobile e web para a lanchonete Skimo Graia — cardápio, carrinho, checkout com pagamento na entrega, rastreio de pedidos e painel admin. React Native/Expo com Firebase Auth, Firestore e API Node opcional.",
+          "App mobile e web para a lanchonete Skimo Graia: cardápio, carrinho, checkout com pagamento na entrega, rastreio de pedidos e painel admin. React Native/Expo com Firebase Auth, Firestore e API Node opcional.",
+      },
+      {
+        title: "Skimo Graia — Chatbot",
+        description:
+          "Bot de pedidos via WhatsApp (Baileys) para a Skimo Graia: fluxo de cardápio, carrinho e confirmação no chat, com painel admin Kanban e chat integrado em tempo real via Firestore. Node.js + React.",
+      },
+      {
+        title: "MV Empório",
+        description:
+          "PWA completo para adega e varejo: loja online, PDV no caixa, controle de margem e precificação, estoque, faturamento e painel admin. React, TypeScript, Firebase, Supabase e funcionamento offline com sync na nuvem. Em desenvolvimento ativo.",
+      },
+      {
+        title: "Portfólio QA",
+        description:
+          "Este site: portfólio profissional com i18n (PT/EN/ES), tema claro/escuro, seções de projetos, experiência, certificações e contato via WhatsApp. React, TypeScript, Vite, Tailwind e deploy no Firebase Hosting.",
       },
       {
         title: "CET Comunicação",
         description:
-          "App de controle de fluxo para a CET Comunicação — registro de entrada e saída de equipamentos e pessoas via leitura de crachá/código de barras, histórico de retiradas e devoluções, painel de patrimônio e exportação de relatórios em Excel.",
+          "App de controle de fluxo para a CET Comunicação: registro de entrada e saída de equipamentos e pessoas via leitura de crachá/código de barras, histórico de retiradas e devoluções, painel de patrimônio e exportação de relatórios em Excel.",
       },
       {
         title: "Controle Financeiro",
         description:
-          "App web publicado na Vercel e versão desktop — dashboard, receitas e despesas, categorias, metas e investimentos com login Firebase (e-mail ou Google). React, TypeScript e Vite.",
+          "App web publicado na Vercel e versão desktop: dashboard, receitas e despesas, categorias, metas e investimentos com login Firebase (e-mail ou Google). React, TypeScript e Vite.",
       },
       {
         title: "Consórcio Bradesco",
         description:
-          "Automação E2E com Cypress no sistema de consórcio do Bradesco na Codgo.X, cobrindo fluxos críticos, regressão estável e integração com CI/CD do time de QA.",
+          "Atuação em QA na Codgo.X: automação E2E com Cypress no sistema de consórcio Bradesco, fluxos críticos, regressão e integração com CI/CD do time.",
       },
       {
         title: "upLexis Platform",
         description:
-          "Cobertura de testes para Marketplace, upFolder e Novo Dossiê — automação E2E e API com Cypress e Postman, performance com JMeter e sustentação de correções em produção.",
+          "Atuação em QA na upLexis: testes em Marketplace, upFolder e Novo Dossiê com Cypress, Postman, JMeter e validação de correções em produção.",
       },
       {
         title: "Lecom BPM",
         description:
-          "Testes manuais Web e Mobile no Lecom BPM, validação via scripts SQL (SQL Server, Oracle, MySQL) e gerenciamento de ambientes Jenkins para ciclos de teste estáveis.",
+          "Atuação em QA na Lecom: testes manuais Web e Mobile no BPM, scripts SQL (SQL Server, Oracle, MySQL) e gestão de ambientes Jenkins.",
       },
     ],
   },
@@ -113,7 +192,7 @@ const pt = {
       {
         role: "Analista de Testes Pleno",
         company: "Codgo.X",
-        period: "2024 — Jun 2025",
+        period: "2024 a Jun 2025",
         points: [
           "Automação E2E com Cypress no sistema de consórcio Bradesco, com foco em fluxos críticos e regressão estável.",
           "Versionamento com Git, GitLab e GitHub, branches e integração contínua com o fluxo de CI/CD do time de QA.",
@@ -124,7 +203,7 @@ const pt = {
       {
         role: "Analista de Testes Júnior",
         company: "upLexis Tecnologia",
-        period: "2022 — 2024",
+        period: "2022 a 2024",
         points: [
           "Projetos Marketplace, upFolder e Novo Dossiê: testes manuais, de API e de usabilidade.",
           "Automação E2E e de API com Cypress e Postman, integrada ao GitLab para versionamento e controle de código.",
@@ -136,7 +215,7 @@ const pt = {
       {
         role: "Analista de Testes Júnior",
         company: "Lecom Tecnologia",
-        period: "2020 — 2022",
+        period: "2020 a 2022",
         points: [
           "Testes manuais no Lecom BPM (web e mobile), documentando bugs, melhorias e tarefas no Jira.",
           "Elaboração de casos de teste para a ferramenta Lecom, cobrindo os principais fluxos do sistema.",
@@ -168,17 +247,17 @@ const pt = {
         label: "Cursos Cypress",
         items: [
           {
-            name: "Testes automatizados com Cypress — Básico",
+            name: "Testes automatizados com Cypress (Básico)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-basico",
           },
           {
-            name: "Testes automatizados com Cypress — Intermediário",
+            name: "Testes automatizados com Cypress (Intermediário)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-intermediario",
           },
           {
-            name: "Testes automatizados com Cypress — Avançado",
+            name: "Testes automatizados com Cypress (Avançado)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-avancado",
           },
@@ -190,7 +269,7 @@ const pt = {
         ],
       },
       {
-        label: "Cursos — Desenvolvimento (Udemy)",
+        label: "Cursos de Desenvolvimento (Udemy)",
         items: [
           {
             name: "Introdução à Linguagem HTML",
@@ -213,7 +292,7 @@ const pt = {
             id: "algoritmos",
           },
           {
-            name: "Aprenda Linguagem C — Fundamentos para Lógica de Programação",
+            name: "Aprenda Linguagem C (Fundamentos para Lógica de Programação)",
             issuer: "John Haste • Udemy",
             id: "linguagem-c",
           },
@@ -240,7 +319,7 @@ const pt = {
     heading: "Vamos elevar a qualidade do seu produto?",
     body:
       "Estou aberto a conversar sobre automação, estratégia de QA ou oportunidades onde qualidade seja prioridade de negócio.",
-    location: "Brasil — remoto / híbrido",
+    location: "Brasil (remoto / híbrido)",
     formName: "Nome",
     formEmail: "E-mail",
     formMessage: "Mensagem",
@@ -257,6 +336,49 @@ const pt = {
     github: "GitHub",
     whatsapp: "WhatsApp",
     email: "E-mail",
+  },
+  skimoGalleryPage: {
+    title: "Skimo Graia",
+    subtitle:
+      "Fluxo completo do app mobile e web da lanchonete: entrada, cardápio, checkout, rastreio e painel administrativo.",
+    back: "Voltar aos projetos",
+    sections: {
+      entry: "Entrada",
+      customer: "App do cliente",
+      checkout: "Checkout e pedidos",
+      admin: "Painel admin",
+    },
+  },
+  skimoChatbotGalleryPage: {
+    title: "Skimo Graia — Chatbot",
+    subtitle:
+      "Bot de pedidos via WhatsApp com painel admin em tempo real: quadro Kanban de pedidos, chat integrado estilo WhatsApp Web e controles do bot (ligar/desligar, modo manual, taxa e Pix).",
+    back: "Voltar aos projetos",
+    sections: {
+      painel: "Painel admin",
+      modais: "Cadastro e configuração",
+    },
+  },
+  cetComunicacaoGalleryPage: {
+    title: "CET Comunicação",
+    subtitle:
+      "App de controle de fluxo para equipamentos e pessoas: leitura de crachá/código de barras, painel de movimentações, patrimônio e exportação de relatórios em Excel.",
+    back: "Voltar aos projetos",
+    sections: {
+      app: "App mobile",
+    },
+  },
+  mvEmporioGalleryPage: {
+    title: "MV Empório",
+    subtitle:
+      "Sistema de gestão para adega: loja online, PDV, margem de lucro, estoque, faturamento e painel administrativo. PWA offline com backup na nuvem.",
+    back: "Voltar aos projetos",
+    sections: {
+      entry: "Acesso",
+      shop: "Loja online",
+      caixa: "Caixa e PDV",
+      admin: "Painel admin",
+    },
   },
 };
 
@@ -285,14 +407,18 @@ const en: MessageTree = {
     themeDark: "Switch to dark theme",
   },
   meta: {
-    title: "Victor Daniel — QA Engineer",
+    title: "Victor Daniel | QA Engineer",
     description:
-      "Portfolio of Victor Daniel — QA Engineer with experience in Cypress automation, APIs, databases, and mobile testing.",
+      "Portfolio of Victor Daniel, QA Engineer with experience in Cypress automation, APIs, databases, and mobile testing.",
   },
   cvDownload: {
     downloading: "Preparing download...",
     done: "Download started!",
-    error: "Download failed — try again",
+    error: "Download failed. Try again",
+  },
+  gallery: {
+    protectedPreview: "Protected preview",
+    protectedHint: "Hire me to see the rest haha",
   },
   hero: {
     badge: "Open to a new challenge",
@@ -300,23 +426,23 @@ const en: MessageTree = {
     titleHighlight: "venturing into coding",
     titleAfter: "on the side.",
     subtitle:
-      "6 years in quality — solid experience in test automation with Cypress, APIs, databases, and mobile testing. Now also trying my hand at building things: apps, websites, whatever comes up.",
+      "6 years in quality, with solid experience in test automation with Cypress, APIs, databases, and mobile testing. Now also trying my hand at building things: apps, websites, whatever comes up.",
     projects: "My Projects",
     viewCv: "View resume",
   },
   about: {
     heading: "About Me",
-    intro: "Victor Daniel — 26 years old",
+    intro: "Victor Daniel (26 years old)",
     paragraphs: [
       "6 years breaking software before users do.",
-      "I've worked at Lecom, upLexis, and Codgo.X — automating E2E tests for Bradesco's consortium system. Along the way I took Cypress, API automation, and mobile testing courses — not because I had to, but because I wanted to understand every layer of the process.",
-      "Outside work I started venturing into coding — apps, websites, automations. Still exploring, but already shipping things that work.",
+      "I've worked at Lecom, upLexis, and Codgo.X, automating E2E tests for Bradesco's consortium system. Along the way I took Cypress, API automation, and mobile testing courses (not because I had to, but because I wanted to understand every layer of the process).",
+      "Outside work I started venturing into coding: apps, websites, automations. Still exploring, but already shipping things that work.",
     ],
     footer:
       "Computer Science degree from FIB Bauru. Based in inland São Paulo, available for remote work.",
     personalHeading: "Off the clock",
     personalParagraph:
-      "I play the cello — which, technically, is a giant violin — and enjoy games, movies, series, and that kind of thing. A healthy balance between sheet music and screen time.",
+      "I play the cello (which, technically, is a giant violin) and enjoy games, movies, series, and that kind of thing. A healthy balance between sheet music and screen time.",
     hobbies: ["Cello", "Games", "Movies", "Shows"],
     photoAlt: "Professional headshot",
     noPhoto1a: "No image in",
@@ -335,39 +461,114 @@ const en: MessageTree = {
   projects: {
     heading: "Featured Projects",
     subtitle:
-      "Apps I built and products where I delivered quality in production.",
+      "Apps I built and corporate products where I worked on QA and test automation.",
     demo: "Demo",
     repo: "GitHub",
+    viewScreens: "View screens",
+    skimoGallery: {
+      entryLogin: "Entry: login",
+      entrySignup: "Entry: sign up",
+      entryGuest: "Entry: guest",
+      home: "Home",
+      catalog: "Menu",
+      cart: "Cart",
+      offers: "Offers",
+      profile: "Profile",
+      help: "Help",
+      paymentMethods: "Payment methods",
+      privacy: "Privacy",
+      address: "Confirm address",
+      checkout: "Checkout",
+      tracking: "Track order",
+      orders: "My orders",
+      adminLogin: "Admin: login",
+      adminDashboard: "Admin: dashboard",
+      adminOrders: "Admin: orders",
+      adminCredit: "Admin: credit tabs",
+      adminOffers: "Admin: offers",
+      adminAnalytics: "Admin: analytics",
+      adminSettings: "Admin: settings",
+    },
+    skimoChatbotGallery: {
+      panelOverview: "Panel: overview",
+      kanban: "Panel: Kanban board",
+      chatThread: "Panel: WhatsApp chat",
+      newOrder: "Modal: new order",
+      storeSettings: "Modal: store settings",
+    },
+    cetComunicacaoGallery: {
+      panel: "Main panel",
+      equipment: "Equipment",
+      history: "History",
+      reports: "Reports",
+    },
+    mvEmporioGallery: {
+      login: "Login",
+      shopCatalog: "Shop: catalog",
+      shopPromos: "Shop: promotions",
+      shopCart: "Shop: cart",
+      shopCheckout: "Shop: checkout",
+      shopOrders: "Shop: orders",
+      shopProfile: "Shop: profile",
+      caixaPdv: "POS: checkout",
+      caixaOrders: "POS: orders",
+      caixaPricing: "POS: pricing & margin",
+      caixaStock: "POS: stock",
+      caixaIntake: "POS: stock intake",
+      adminDashboard: "Admin: dashboard",
+      adminOrders: "Admin: orders",
+      adminBilling: "Admin: billing",
+      adminProducts: "Admin: products",
+      adminPricing: "Admin: pricing",
+      adminPromos: "Admin: promotions",
+      adminReports: "Admin: reports",
+      adminInventory: "Admin: inventory",
+    },
     items: [
       {
         title: "Skimo Graia",
         description:
-          "Mobile and web app for the Skimo Graia snack bar — menu, cart, pay-on-delivery checkout, order tracking, and admin panel. React Native/Expo with Firebase Auth, Firestore, and optional Node API.",
+          "Mobile and web app for the Skimo Graia snack bar: menu, cart, pay-on-delivery checkout, order tracking, and admin panel. React Native/Expo with Firebase Auth, Firestore, and optional Node API.",
+      },
+      {
+        title: "Skimo Graia — Chatbot",
+        description:
+          "WhatsApp order bot (Baileys) for Skimo Graia: menu and cart flow in chat, order confirmation, and real-time admin Kanban panel with integrated chat via Firestore. Node.js + React.",
+      },
+      {
+        title: "MV Empório",
+        description:
+          "Full PWA for liquor store retail: online shop, POS checkout, margin and pricing control, inventory, billing, and admin panel. React, TypeScript, Firebase, Supabase, offline-first with cloud sync. Actively in development.",
+      },
+      {
+        title: "QA Portfolio",
+        description:
+          "This site: professional portfolio with i18n (PT/EN/ES), light/dark theme, projects, experience, certifications, and WhatsApp contact. React, TypeScript, Vite, Tailwind, and Firebase Hosting.",
       },
       {
         title: "CET Comunicação",
         description:
-          "Flow control app for CET Comunicação — entry and exit tracking for equipment and people via badge/barcode scanning, withdrawal and return history, asset dashboard, and Excel report export.",
+          "Flow control app for CET Comunicação: entry and exit tracking for equipment and people via badge/barcode scanning, withdrawal and return history, asset dashboard, and Excel report export.",
       },
       {
         title: "Personal Finance Control",
         description:
-          "Web app live on Vercel plus a desktop build — dashboard, income and expenses, categories, goals, and investments with Firebase login (email or Google). React, TypeScript, and Vite.",
+          "Web app live on Vercel plus a desktop build: dashboard, income and expenses, categories, goals, and investments with Firebase login (email or Google). React, TypeScript, and Vite.",
       },
       {
         title: "Bradesco Consortium",
         description:
-          "Cypress E2E automation for Bradesco's consortium system at Codgo.X, covering critical flows, stable regression, and QA CI/CD integration.",
+          "QA work at Codgo.X: Cypress E2E automation on Bradesco's consortium system, critical flows, regression, and team CI/CD integration.",
       },
       {
         title: "upLexis Platform",
         description:
-          "Test coverage for Marketplace, upFolder, and Novo Dossiê — Cypress and Postman E2E/API automation, JMeter performance, and production fix validation.",
+          "QA work at upLexis: testing Marketplace, upFolder, and Novo Dossiê with Cypress, Postman, JMeter, and production fix validation.",
       },
       {
         title: "Lecom BPM",
         description:
-          "Manual Web and Mobile testing on Lecom BPM, SQL validation scripts (SQL Server, Oracle, MySQL), and Jenkins environment management for stable test cycles.",
+          "QA work at Lecom: manual Web and Mobile testing on BPM, SQL scripts (SQL Server, Oracle, MySQL), and Jenkins environment management.",
       },
     ],
   },
@@ -378,7 +579,7 @@ const en: MessageTree = {
       {
         role: "Mid-Level Test Analyst",
         company: "Codgo.X",
-        period: "2024 — Jun 2025",
+        period: "2024 to Jun 2025",
         points: [
           "E2E test development and maintenance with Cypress for Bradesco consortium software, guarding critical workflows and regression stability.",
           "Git / GitLab / GitHub versioning, branching, and integration with QA CI/CD pipelines.",
@@ -389,7 +590,7 @@ const en: MessageTree = {
       {
         role: "Junior Test Analyst",
         company: "upLexis Tecnologia",
-        period: "2022 — 2024",
+        period: "2022 to 2024",
         points: [
           "Marketplace, upFolder and Novo Dossiê: manual, API, and usability testing.",
           "Cypress plus Postman for E2E and API flows, wired to GitLab for source control.",
@@ -401,7 +602,7 @@ const en: MessageTree = {
       {
         role: "Junior Test Analyst",
         company: "Lecom Tecnologia",
-        period: "2020 — 2022",
+        period: "2020 to 2022",
         points: [
           "Manual testing on Lecom BPM (web and mobile), logging issues and improvements in Jira.",
           "Targeted test design for Lecom flows across core product journeys.",
@@ -433,17 +634,17 @@ const en: MessageTree = {
         label: "Cypress Courses",
         items: [
           {
-            name: "Automated Testing with Cypress — Basic",
+            name: "Automated Testing with Cypress (Basic)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-basico",
           },
           {
-            name: "Automated Testing with Cypress — Intermediate",
+            name: "Automated Testing with Cypress (Intermediate)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-intermediario",
           },
           {
-            name: "Automated Testing with Cypress — Advanced",
+            name: "Automated Testing with Cypress (Advanced)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-avancado",
           },
@@ -455,7 +656,7 @@ const en: MessageTree = {
         ],
       },
       {
-        label: "Courses — Development (Udemy)",
+        label: "Development Courses (Udemy)",
         items: [
           {
             name: "Introduction to HTML",
@@ -478,7 +679,7 @@ const en: MessageTree = {
             id: "algoritmos",
           },
           {
-            name: "Learn C Language — Fundamentals for Programming Logic",
+            name: "Learn C Language (Fundamentals for Programming Logic)",
             issuer: "John Haste • Udemy",
             id: "linguagem-c",
           },
@@ -493,7 +694,7 @@ const en: MessageTree = {
             id: "github-pages",
           },
           {
-            name: "The Complete Database and SQL Course — No Mysteries!",
+            name: "The Complete Database and SQL Course (No Mysteries!)",
             issuer: "Felipe Mafra • Udemy",
             id: "sql",
           },
@@ -505,7 +706,7 @@ const en: MessageTree = {
     heading: "Ready to raise the quality bar?",
     body:
       "Happy to talk about automation, QA strategy, or roles where quality is a business priority.",
-    location: "Brazil — remote / hybrid",
+    location: "Brazil (remote / hybrid)",
     formName: "Name",
     formEmail: "Email",
     formMessage: "Message",
@@ -522,6 +723,49 @@ const en: MessageTree = {
     github: "GitHub",
     whatsapp: "WhatsApp",
     email: "Email",
+  },
+  skimoGalleryPage: {
+    title: "Skimo Graia",
+    subtitle:
+      "Full flow of the snack bar mobile and web app: entry, menu, checkout, tracking, and admin panel.",
+    back: "Back to projects",
+    sections: {
+      entry: "Entry",
+      customer: "Customer app",
+      checkout: "Checkout & orders",
+      admin: "Admin panel",
+    },
+  },
+  skimoChatbotGalleryPage: {
+    title: "Skimo Graia — Chatbot",
+    subtitle:
+      "WhatsApp ordering bot with a real-time admin panel: Kanban order board, WhatsApp Web–style chat, and bot controls (on/off, manual mode, delivery fee and Pix).",
+    back: "Back to projects",
+    sections: {
+      painel: "Admin panel",
+      modais: "Orders & settings",
+    },
+  },
+  cetComunicacaoGalleryPage: {
+    title: "CET Comunicação",
+    subtitle:
+      "Flow control app for equipment and people: badge/barcode scanning, movement dashboard, asset tracking, and Excel report export.",
+    back: "Back to projects",
+    sections: {
+      app: "Mobile app",
+    },
+  },
+  mvEmporioGalleryPage: {
+    title: "MV Empório",
+    subtitle:
+      "Liquor store management system: online shop, POS, profit margin, inventory, billing, and admin panel. Offline PWA with cloud backup.",
+    back: "Back to projects",
+    sections: {
+      entry: "Access",
+      shop: "Online shop",
+      caixa: "POS & checkout",
+      admin: "Admin panel",
+    },
   },
 };
 
@@ -546,14 +790,18 @@ const es: MessageTree = {
     themeDark: "Activar tema oscuro",
   },
   meta: {
-    title: "Victor Daniel — QA Engineer",
+    title: "Victor Daniel | QA Engineer",
     description:
-      "Portafolio de Victor Daniel — QA Engineer con experiencia en automatización Cypress, APIs, bases de datos y pruebas mobile.",
+      "Portafolio de Victor Daniel, QA Engineer con experiencia en automatización Cypress, APIs, bases de datos y pruebas mobile.",
   },
   cvDownload: {
     downloading: "Preparando descarga...",
     done: "¡Descarga iniciada!",
-    error: "Error al descargar — inténtalo de nuevo",
+    error: "Error al descargar. Inténtalo de nuevo",
+  },
+  gallery: {
+    protectedPreview: "Vista previa protegida",
+    protectedHint: "Contrátame para ver el resto jaja",
   },
   hero: {
     badge: "Disponible para un nuevo reto",
@@ -561,23 +809,23 @@ const es: MessageTree = {
     titleHighlight: "aventurándome a codear",
     titleAfter: "algunas cosas.",
     subtitle:
-      "6 años en calidad — mucha experiencia en automatización de pruebas con Cypress, APIs, bases de datos y pruebas mobile. Y ahora intentando codear también: apps, sitios, lo que surja.",
+      "6 años en calidad, con mucha experiencia en automatización de pruebas con Cypress, APIs, bases de datos y pruebas mobile. Y ahora intentando codear también: apps, sitios, lo que surja.",
     projects: "Mis proyectos",
     viewCv: "Ver currículum",
   },
   about: {
     heading: "Sobre mí",
-    intro: "Victor Daniel — 26 años",
+    intro: "Victor Daniel (26 años)",
     paragraphs: [
       "6 años rompiendo software antes de que lo rompa el usuario.",
-      "Pasé por empresas como Lecom, upLexis y Codgo.X — automatizando pruebas E2E para el consorcio de Bradesco. En el camino hice cursos de Cypress, automatización de API y pruebas mobile — no por obligación, sino porque quería entender cada capa del proceso.",
+      "Pasé por empresas como Lecom, upLexis y Codgo.X, automatizando pruebas E2E para el consorcio de Bradesco. En el camino hice cursos de Cypress, automatización de API y pruebas mobile (no por obligación, sino porque quería entender cada capa del proceso).",
       "Fuera del trabajo empecé a aventurarme a programar cosas como apps, sitios y automatizaciones. Aún explorando, pero ya entregando cosas que funcionan.",
     ],
     footer:
       "Ciencias de la Computación por la FIB Bauru. Interior de SP, disponible para remoto.",
     personalHeading: "Fuera del trabajo",
     personalParagraph:
-      "Toco violoncelo — que, técnicamente, es un violín gigante — y me gustan los juegos, películas, series y ese tipo de cosas. Un equilibrio sano entre partitura y pantalla.",
+      "Toco violoncelo (que, técnicamente, es un violín gigante) y me gustan los juegos, películas, series y ese tipo de cosas. Un equilibrio sano entre partitura y pantalla.",
     hobbies: ["Violoncelo", "Juegos", "Películas", "Series"],
     photoAlt: "Retrato profesional",
     noPhoto1a: "No hay imagen en",
@@ -596,39 +844,114 @@ const es: MessageTree = {
   projects: {
     heading: "Proyectos destacados",
     subtitle:
-      "Apps que desarrollé y productos en los que aseguré calidad en producción.",
+      "Apps que desarrollé y productos corporativos en los que trabajé con QA y automatización.",
     demo: "Demo",
     repo: "GitHub",
+    viewScreens: "Ver pantallas",
+    skimoGallery: {
+      entryLogin: "Entrada: login",
+      entrySignup: "Entrada: crear cuenta",
+      entryGuest: "Entrada: invitado",
+      home: "Inicio",
+      catalog: "Menú",
+      cart: "Carrito",
+      offers: "Ofertas",
+      profile: "Perfil",
+      help: "Ayuda",
+      paymentMethods: "Métodos de pago",
+      privacy: "Privacidad",
+      address: "Confirmar dirección",
+      checkout: "Checkout",
+      tracking: "Rastrear pedido",
+      orders: "Mis pedidos",
+      adminLogin: "Admin: login",
+      adminDashboard: "Admin: panel",
+      adminOrders: "Admin: pedidos",
+      adminCredit: "Admin: fiados",
+      adminOffers: "Admin: ofertas",
+      adminAnalytics: "Admin: análisis",
+      adminSettings: "Admin: configuración",
+    },
+    skimoChatbotGallery: {
+      panelOverview: "Panel: vista general",
+      kanban: "Panel: tablero Kanban",
+      chatThread: "Panel: chat WhatsApp",
+      newOrder: "Modal: nuevo pedido",
+      storeSettings: "Modal: configuración de la tienda",
+    },
+    cetComunicacaoGallery: {
+      panel: "Panel principal",
+      equipment: "Equipos",
+      history: "Historial",
+      reports: "Informes",
+    },
+    mvEmporioGallery: {
+      login: "Login",
+      shopCatalog: "Tienda: catálogo",
+      shopPromos: "Tienda: promociones",
+      shopCart: "Tienda: carrito",
+      shopCheckout: "Tienda: checkout",
+      shopOrders: "Tienda: pedidos",
+      shopProfile: "Tienda: perfil",
+      caixaPdv: "Caja: PDV",
+      caixaOrders: "Caja: pedidos",
+      caixaPricing: "Caja: precios y margen",
+      caixaStock: "Caja: inventario",
+      caixaIntake: "Caja: entrada de productos",
+      adminDashboard: "Admin: panel",
+      adminOrders: "Admin: pedidos",
+      adminBilling: "Admin: facturación",
+      adminProducts: "Admin: productos",
+      adminPricing: "Admin: precios",
+      adminPromos: "Admin: promociones",
+      adminReports: "Admin: informes",
+      adminInventory: "Admin: inventario",
+    },
     items: [
       {
         title: "Skimo Graia",
         description:
-          "App móvil y web para la lanchonete Skimo Graia — menú, carrito, checkout con pago en la entrega, seguimiento de pedidos y panel admin. React Native/Expo con Firebase Auth, Firestore y API Node opcional.",
+          "App móvil y web para la lanchonete Skimo Graia: menú, carrito, checkout con pago en la entrega, seguimiento de pedidos y panel admin. React Native/Expo con Firebase Auth, Firestore y API Node opcional.",
+      },
+      {
+        title: "Skimo Graia — Chatbot",
+        description:
+          "Bot de pedidos por WhatsApp (Baileys) para Skimo Graia: flujo de menú y carrito en el chat, confirmación de pedido y panel admin Kanban con chat integrado en tiempo real vía Firestore. Node.js + React.",
+      },
+      {
+        title: "MV Empório",
+        description:
+          "PWA completo para adega y retail: tienda online, PDV en caja, control de margen y precios, inventario, facturación y panel admin. React, TypeScript, Firebase, Supabase y funcionamiento offline con sync en la nube. En desarrollo activo.",
+      },
+      {
+        title: "Portafolio QA",
+        description:
+          "Este sitio: portafolio profesional con i18n (PT/EN/ES), tema claro/oscuro, proyectos, experiencia, certificaciones y contacto por WhatsApp. React, TypeScript, Vite, Tailwind y deploy en Firebase Hosting.",
       },
       {
         title: "CET Comunicação",
         description:
-          "App de control de flujo para CET Comunicação — registro de entrada y salida de equipos y personas mediante lectura de credencial/código de barras, historial de retiros y devoluciones, panel de patrimonio y exportación de informes en Excel.",
+          "App de control de flujo para CET Comunicação: registro de entrada y salida de equipos y personas mediante lectura de credencial/código de barras, historial de retiros y devoluciones, panel de patrimonio y exportación de informes en Excel.",
       },
       {
         title: "Control Financiero",
         description:
-          "App web publicada en Vercel y versión de escritorio — dashboard, ingresos y gastos, categorías, metas e inversiones con login Firebase (correo o Google). React, TypeScript y Vite.",
+          "App web publicada en Vercel y versión de escritorio: dashboard, ingresos y gastos, categorías, metas e inversiones con login Firebase (correo o Google). React, TypeScript y Vite.",
       },
       {
         title: "Consorcio Bradesco",
         description:
-          "Automatización E2E con Cypress en el sistema de consorcio de Bradesco en Codgo.X, cubriendo flujos críticos, regresión estable e integración CI/CD del equipo de QA.",
+          "Actuación en QA en Codgo.X: automatización E2E con Cypress en el consorcio Bradesco, flujos críticos, regresión e integración CI/CD del equipo.",
       },
       {
         title: "upLexis Platform",
         description:
-          "Cobertura de pruebas para Marketplace, upFolder y Novo Dossiê — automatización E2E y API con Cypress y Postman, rendimiento con JMeter y validación de correcciones en producción.",
+          "Actuación en QA en upLexis: pruebas en Marketplace, upFolder y Novo Dossiê con Cypress, Postman, JMeter y validación de correcciones en producción.",
       },
       {
         title: "Lecom BPM",
         description:
-          "Pruebas manuales Web y Mobile en Lecom BPM, validación con scripts SQL (SQL Server, Oracle, MySQL) y gestión de entornos Jenkins para ciclos de prueba estables.",
+          "Actuación en QA en Lecom: pruebas manuales Web y Mobile en BPM, scripts SQL (SQL Server, Oracle, MySQL) y gestión de entornos Jenkins.",
       },
     ],
   },
@@ -640,7 +963,7 @@ const es: MessageTree = {
       {
         role: "Analista de Pruebas Pleno",
         company: "Codgo.X",
-        period: "2024 — Jun 2025",
+        period: "2024 a Jun 2025",
         points: [
           "Automatización E2E con Cypress en el sistema de consorcio Bradesco, priorizando flujos críticos y regresión estable.",
           "Versionado con Git, GitLab y GitHub, ramas y flujo integrado al CI/CD del equipo de QA.",
@@ -651,7 +974,7 @@ const es: MessageTree = {
       {
         role: "Analista de Pruebas Junior",
         company: "upLexis Tecnologia",
-        period: "2022 — 2024",
+        period: "2022 a 2024",
         points: [
           "Proyectos Marketplace, upFolder y Novo Dossiê: pruebas manuales, de API y de usabilidad.",
           "Automatización E2E y de API con Cypress y Postman, integrada a GitLab.",
@@ -663,7 +986,7 @@ const es: MessageTree = {
       {
         role: "Analista de Pruebas Junior",
         company: "Lecom Tecnologia",
-        period: "2020 — 2022",
+        period: "2020 a 2022",
         points: [
           "Pruebas manuales en Lecom BPM (web y móvil) con registro en Jira.",
           "Casos de prueba para los flujos principales de la herramienta Lecom.",
@@ -695,17 +1018,17 @@ const es: MessageTree = {
         label: "Cursos Cypress",
         items: [
           {
-            name: "Pruebas automatizadas con Cypress — Básico",
+            name: "Pruebas automatizadas con Cypress (Básico)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-basico",
           },
           {
-            name: "Pruebas automatizadas con Cypress — Intermedio",
+            name: "Pruebas automatizadas con Cypress (Intermedio)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-intermediario",
           },
           {
-            name: "Pruebas automatizadas con Cypress — Avanzado",
+            name: "Pruebas automatizadas con Cypress (Avanzado)",
             issuer: "Walmyr Filho • Udemy",
             id: "cypress-avancado",
           },
@@ -717,7 +1040,7 @@ const es: MessageTree = {
         ],
       },
       {
-        label: "Cursos — Desarrollo (Udemy)",
+        label: "Cursos de Desarrollo (Udemy)",
         items: [
           {
             name: "Introducción al lenguaje HTML",
@@ -740,7 +1063,7 @@ const es: MessageTree = {
             id: "algoritmos",
           },
           {
-            name: "Aprende Lenguaje C — Fundamentos para Lógica de Programación",
+            name: "Aprende Lenguaje C (Fundamentos para Lógica de Programación)",
             issuer: "John Haste • Udemy",
             id: "linguagem-c",
           },
@@ -767,7 +1090,7 @@ const es: MessageTree = {
     heading: "¿Elevamos la calidad de tu producto?",
     body:
       "Abierto a hablar de automatización, estrategia de QA u oportunidades donde la calidad sea prioridad de negocio.",
-    location: "Brasil — trabajo remoto / híbrido",
+    location: "Brasil (trabajo remoto / híbrido)",
     formName: "Nombre",
     formEmail: "Correo",
     formMessage: "Mensaje",
@@ -784,6 +1107,49 @@ const es: MessageTree = {
     github: "GitHub",
     whatsapp: "WhatsApp",
     email: "Correo",
+  },
+  skimoGalleryPage: {
+    title: "Skimo Graia",
+    subtitle:
+      "Flujo completo de la app móvil y web de la lanchonete: entrada, menú, checkout, seguimiento y panel admin.",
+    back: "Volver a proyectos",
+    sections: {
+      entry: "Entrada",
+      customer: "App del cliente",
+      checkout: "Checkout y pedidos",
+      admin: "Panel admin",
+    },
+  },
+  skimoChatbotGalleryPage: {
+    title: "Skimo Graia — Chatbot",
+    subtitle:
+      "Bot de pedidos por WhatsApp con panel admin en tiempo real: tablero Kanban, chat integrado estilo WhatsApp Web y controles del bot (encender/apagar, modo manual, tarifa y Pix).",
+    back: "Volver a proyectos",
+    sections: {
+      painel: "Panel admin",
+      modais: "Pedidos y configuración",
+    },
+  },
+  cetComunicacaoGalleryPage: {
+    title: "CET Comunicação",
+    subtitle:
+      "App de control de flujo para equipos y personas: lectura de credencial/código de barras, panel de movimientos, patrimonio y exportación de informes en Excel.",
+    back: "Volver a proyectos",
+    sections: {
+      app: "App móvil",
+    },
+  },
+  mvEmporioGalleryPage: {
+    title: "MV Empório",
+    subtitle:
+      "Sistema de gestión para adega: tienda online, PDV, margen de ganancia, inventario, facturación y panel admin. PWA offline con respaldo en la nube.",
+    back: "Volver a proyectos",
+    sections: {
+      entry: "Acceso",
+      shop: "Tienda online",
+      caixa: "Caja y PDV",
+      admin: "Panel admin",
+    },
   },
 };
 

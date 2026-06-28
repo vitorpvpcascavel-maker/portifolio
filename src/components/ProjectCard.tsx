@@ -7,9 +7,11 @@ export type Project = {
   tags: string[];
   demoUrl?: string;
   repoUrl?: string;
+  screensPath?: string;
   delay?: number;
   demoLabel: string;
   repoLabel: string;
+  viewLabel: string;
 };
 
 export function ProjectCard({
@@ -19,10 +21,14 @@ export function ProjectCard({
   tags,
   demoUrl,
   repoUrl,
+  screensPath,
   delay = 0,
   demoLabel,
   repoLabel,
+  viewLabel,
 }: Project) {
+  const hasActions = demoUrl || repoUrl || screensPath;
+
   return (
     <Reveal delay={delay}>
       <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-slate-300 hover:shadow-glow dark:border-white/5 dark:bg-[#120e1c] dark:hover:border-white/10">
@@ -49,8 +55,16 @@ export function ProjectCard({
               </span>
             ))}
           </div>
-          {(demoUrl || repoUrl) && (
-            <div className="mt-5 flex gap-3">
+          {hasActions && (
+            <div className="mt-5 flex flex-wrap gap-3">
+              {screensPath && (
+                <a
+                  href={screensPath}
+                  className="rounded-lg bg-accent-purple px-4 py-2 text-xs font-semibold text-[#0f0a18] transition hover:bg-violet-200"
+                >
+                  {viewLabel}
+                </a>
+              )}
               {demoUrl && (
                 <a
                   href={demoUrl}

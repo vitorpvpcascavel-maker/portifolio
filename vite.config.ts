@@ -8,10 +8,53 @@ import { defineConfig, type Plugin } from "vite";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CV_URL_PREFIX = "/cv/";
+const FOTO_URL_PREFIX = "/foto/";
 
 function isPathInsideDir(file: string, dir: string) {
   const rel = path.relative(path.resolve(dir), path.resolve(file));
   return rel !== "" && !rel.startsWith("..") && !path.isAbsolute(rel);
+}
+
+function serveStaticFolder(urlPrefix: string, rootDir: string, fileTest: (name: string) => boolean): Plugin {
+  const absRoot = path.resolve(__dirname, rootDir);
+  return {
+    name: `serve-${rootDir}-folder`,
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const raw = req.url?.split("?")[0]?.split("#")[0];
+        if (!raw?.startsWith(urlPrefix) || raw.includes("..")) {
+          return next();
+        }
+        const rel = decodeURIComponent(raw.slice(urlPrefix.length));
+        if (!rel || rel.endsWith("/")) {
+          return next();
+        }
+        if (!fileTest(rel)) {
+          return next();
+        }
+        const filePath = path.resolve(absRoot, rel);
+        if (!isPathInsideDir(filePath, absRoot)) {
+          res.statusCode = 403;
+          res.end();
+          return;
+        }
+        fs.stat(filePath, (err, st) => {
+          if (err || !st.isFile()) {
+            return next();
+          }
+          const ext = path.extname(rel).toLowerCase();
+          const types: Record<string, string> = {
+            ".png": "image/png",
+            ".jpg": "image/jpeg",
+            ".jpeg": "image/jpeg",
+            ".webp": "image/webp",
+          };
+          res.setHeader("Content-Type", types[ext] ?? "application/octet-stream");
+          fs.createReadStream(filePath).pipe(res);
+        });
+      });
+    },
+  };
 }
 
 function serveCvFolder(): Plugin {
@@ -49,6 +92,12 @@ function serveCvFolder(): Plugin {
   };
 }
 
+function serveFotoFolder(): Plugin {
+  return serveStaticFolder(FOTO_URL_PREFIX, "foto", (name) =>
+    /\.(jpe?g|png|webp)$/i.test(name)
+  );
+}
+
 function copyCvFolderToDist(): Plugin {
   return {
     name: "copy-cv-folder-to-dist",
@@ -72,6 +121,29 @@ function copyCvFolderToDist(): Plugin {
   };
 }
 
+function copyFotoFolderToDist(): Plugin {
+  return {
+    name: "copy-foto-folder-to-dist",
+    async closeBundle() {
+      const fotoDir = path.resolve(__dirname, "foto");
+      const distFoto = path.resolve(__dirname, "dist", "foto");
+      if (!fs.existsSync(fotoDir)) {
+        return;
+      }
+      await fsPromises.mkdir(distFoto, { recursive: true });
+      const entries = await fsPromises.readdir(fotoDir, { withFileTypes: true });
+      for (const e of entries) {
+        if (e.isFile() && /\.(jpe?g|png|webp)$/i.test(e.name)) {
+          await fsPromises.copyFile(
+            path.join(fotoDir, e.name),
+            path.join(distFoto, e.name)
+          );
+        }
+      }
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), serveCvFolder(), copyCvFolderToDist()],
+  plugins: [react(), serveCvFolder(), serveFotoFolder(), copyCvFolderToDist(), copyFotoFolderToDist()],
 });

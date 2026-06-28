@@ -49,7 +49,7 @@ export function CertificationCard({
           target="_blank"
           rel="noopener noreferrer"
           className={`${cardClassName} group cursor-pointer hover:bg-violet-50/60 hover:shadow-sm dark:hover:bg-violet-500/5`}
-          aria-label={`${name} — Udemy`}
+          aria-label={`${name} (Udemy)`}
         >
           <CardContent name={name} issuer={issuer} />
           <svg

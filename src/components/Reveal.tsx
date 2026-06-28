@@ -1,4 +1,3 @@
-import { motion, useInView } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
 type RevealProps = {
@@ -7,19 +6,13 @@ type RevealProps = {
   delay?: number;
 };
 
-export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+/** Conteúdo sempre visível — sem esperar animação (evita tela “vazia”). */
+export function Reveal({ children, className = "" }: RevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial={{ opacity: 0, y: 28 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay }}
-    >
+    <div ref={ref} className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }

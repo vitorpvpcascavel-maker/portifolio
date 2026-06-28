@@ -10,7 +10,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 text-sm text-slate-500 dark:text-zinc-500 sm:flex-row sm:px-6">
         <span className="font-bold text-slate-600 dark:text-zinc-400">{copy.nav.brand}</span>
         <p className="order-last sm:order-none">
-          © {new Date().getFullYear()} — {copy.footer.rights}
+          © {new Date().getFullYear()} · {copy.footer.rights}
         </p>
         <nav className="flex flex-wrap justify-center gap-4">
           <a

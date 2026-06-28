@@ -14,6 +14,7 @@ export function Projects() {
         description: item.description,
         demoLabel: copy.projects.demo,
         repoLabel: copy.projects.repo,
+        viewLabel: copy.projects.viewScreens,
         ...projectMeta[i]!,
       })),
     [copy.projects]

@@ -6,13 +6,19 @@
   "scripts": {
     "dev": "vite",
     "web": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run optimize:screenshots && tsc -b && vite build",
+    "optimize:screenshots": "node scripts/optimize-skimo-screenshots.mjs && node scripts/optimize-skimo-chatbot-screenshots.mjs && node scripts/optimize-mv-emporio-screenshots.mjs && node scripts/optimize-cet-screenshots.mjs",
+    "optimize:skimo": "node scripts/optimize-skimo-screenshots.mjs",
+    "optimize:mv-emporio": "node scripts/optimize-mv-emporio-screenshots.mjs",
+    "optimize:skimo-chatbot": "node scripts/optimize-skimo-chatbot-screenshots.mjs",
+    "optimize:cet": "node scripts/optimize-cet-screenshots.mjs",
+    "capture:mv-emporio": "node scripts/capture-mv-emporio-screenshots.mjs",
+    "capture:portfolio-cover": "node scripts/capture-portfolio-cover.mjs",
     "deploy": "npm run build && firebase deploy --only hosting",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^11.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -28,7 +34,9 @@
     "eslint-plugin-react-refresh": "^0.4.16",
     "firebase-tools": "^15.19.1",
     "globals": "^15.14.0",
+    "playwright": "^1.61.1",
     "postcss": "^8.4.49",
+    "sharp": "^0.35.2",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.18.2",
